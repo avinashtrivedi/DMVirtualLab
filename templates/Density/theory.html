@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/density/main.css">
+
+</head>
+
+<body>
+
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/"><img src="../../static/nittlogo.png"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../aboutus.html">About us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!------------------------------Main content Start---------------------------------------------------->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="bg-light col-lg-2 col-md-3 col-sm-3 show colapse" id="sidebar">
+                <div class="flex-column">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="aim.html">
+                                <i class="fas fa-book-open"></i> Aim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="theory.html">
+                                <i class="fas fa-book-open"></i>Theory</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="procedure.html">
+                                <i class="fas fa-book-open"></i>Procedure</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pretest.html">
+                                <i class="fas fa-book-open"></i>Pre-test</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="simulation.html">
+                                <i class="fas fa-flask"></i>Simulation</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="posttest.html">
+                                <i class="fas fa-book-open"></i>Post-Test</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="references.html">
+                                <i class="fas fa-book-open"></i>Refernces</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-lg-10 col-md-9 col-sm-9">
+                <div class="px-4 mt-4" style="text-decoration: none;">
+                    <div class="row border rounded">
+                        <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <h4 class="col-10"><a href="../../" class="text-secondary">Data Mining</a> > <a href="#" class="text-secondary">DBSCAN Algorithm</a> > Theory</h4>
+                        </span>
+                    </div>
+                    <div class="display-5 content-section">
+                        <h2 id="top" class="display-4">Theory</h2><br>
+                        <p>
+                            It is a popular unsupervised learning method used for model construction and machine learning algorithms. It is a clustering method utilized for separating high-density clusters from low-density clusters. It divides the data points into many groups so
+                            that points lying in the same group will have the same properties. <i>It was proposed by Martin Ester, Hans-Peter
+                                Kriegel,
+                                Jorg Sander, and Xiaowei Xu in 1996.</i> <br> DBSCAN is designed for use with databases that can accelerate region queries. It can not cluster data sets with large differences in their densities.
+                            <div align="center"><img class="img-fluid" src="../../static/Density/clust.png"><img>
+                            </div>
+                            <!-- <div align="right"><img src="../../static/DecisionTree/cluster2.png"></div> -->
+
+                            <br> Clustering analysis or simply Clustering is basically an Unsupervised learning method that divides the data points into a number of specific batches or groups, such that the data points in the same groups have similar
+                            properties and data points in different groups have different properties in some sense. It comprises of many different methods based on different evolution.
+                            <br> Clusters are dense regions in the data space, separated by regions of the lower density of points. The <strong>DBSCAN algorithm</strong> is based on this intuitive notion of “clusters” and “noise”. The key idea is that
+                            for each point of a cluster, the neighborhood of a given radius has to contain at least a minimum number of points.
+                        </p>
+                        <br><br>
+                        <h3>Why Cluster?</h3>
+                        <ul style="list-style-type: disc">
+                            <li>“It is a main task of exploratory data mining, and a common technique for statistical data analysis”</li>
+                        </ul>
+
+                        <h3>OK But why?</h3>
+                        <ul style="list-style-type: disc;">
+                            <li>Eplore and visualize complex data</li>
+                            <li>Reduce data scale</li>
+                            <li>Detect outliers (and other anomalies)</li>
+                            <li>Deduplicate records</li>
+                            <li>Segment a market</li>
+                        </ul><br>
+
+                        <h3> Why DBSCAN ?</h3>
+                        <p>Partitioning methods (K-means, PAM clustering) and hierarchical clustering work for finding spherical-shaped clusters or convex clusters. In other words, they are suitable only for compact and well-separated clusters. Moreover,
+                            they are also severely affected by the presence of noise and outliers in the data.
+                        </p><br>
+
+                        <h3>DBSCAN algorithm requires two parameters</h3>
+                        <ol>
+                            <li> <strong>Eps :</strong> It defines the neighborhood around a data point i.e. if the distance between two points is lower or equal to ‘eps’ then they are considered as neighbors. If the eps value is chosen too small then large
+                                part of the data will be considered as outliers. If it is chosen very large then the clusters will merge and majority of the data points will be in the same clusters. One way to find the eps value is based on the k-distance
+                                graph.
+                            </li>
+
+                            <li> <strong>MinPts:</strong> Minimum number of neighbors (data points) within eps radius. Larger the dataset, the larger value of MinPts must be chosen. As a general rule, the minimum MinPts can be derived from the number of dimensions
+                                D in the dataset as, MinPts >= D+1. The minimum value of MinPts must be chosen at least 3.</li>
+                        </ol><br>
+
+                        <h3>In this algorithm, we have 3 types of data points.</h3>
+                        <ul>
+                            <li> <strong>Core Point: </strong> A point is a core point if it has more than MinPts points within eps.</li>
+                            <li> <strong>Border Point: </strong> A point which has fewer than MinPts within eps but it is in the neighborhood of a core point</li>
+                            <li> <strong>Noise or outlier:</strong>Objects which are not directly density-reachable from at least one core object are known as Noise points.</li>
+                        </ul>
+                        <div align="left"><img class="img-fluid" src="../../static/Density/p1.png"><img> </div>
+
+                        <h3>Reachability</h3>
+                        <ul>
+                            <li> <strong>Directly density reachable:</strong> An object (or instance) q is directly density reachable from object p if q is within the ε-Neighborhood of p and p is a core object.</li>
+                        </ul>
+                        <div align="left"><img class="img-fluid" src="../../static/Density/p2.png"><img> </div>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Here directly density reachability is not symmetric. Object p is not directly density-reachable from object q as q is not a core object.</p>
+                        <ul>
+                            <li> <strong> Density reachable:</strong> An object q is density-reachable from p w.r.t ε and MinPts if there is a chain of objects q1, q2…, qn, with q1=p, qn=q such that qi+1 is directly density-reachable from qi w.r.t ε and MinPts
+                                for all 1
+                                <=i <=n</li>
+                        </ul>
+                        <div align="left"><img class="img-fluid" src="../../static/Density/p3.png"><img> </div>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here density reachability is not symmetric. As q is not a core point thus qn-1 is not directly density-reachable from q, so object p is not density &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reachable
+                            from object q.</p>
+
+                        <h4>Connectivity</h4>
+                        <ul>
+                            <li> <strong>Density connectivity:</strong> Object q is density-connected to object p w.r.t ε and MinPts if there is an object o such that both p and q are density-reachable from o w.r.t ε and MinPts.
+                            </li>
+                        </ul>
+                        <div align="left"><img class="img-fluid" src="../../static/Density/p4.png"><img> </div>
+                        <!-- <div align="center"><img src="../../static/density/k1.png"> </div><br> -->
+
+                        <h3>Enter Density-Based Clustering</h3>
+                        <ul style="list-style-type: disc;">
+                            <li> <strong>Premise: </strong> data is drawn from a probability density function (PDF).
+                            </li>
+                            <div align="left"><img 
+                                class="img-fluid" src="../../static/Density/c1.png"><img> </div>
+
+                            <li> Use the data to estimate the PDF.</li>
+                            <div align="left"><img class="img-fluid" src="../../static/Density/c2.png"><img> </div>
+
+                            <li> Choose a threshold and get the upper level set.</li>
+                            <div align="left"><img class="img-fluid" src="../../static/density/c6.png"><img> </div>
+
+                            <li> Find connected components of the upper level set..</li>
+                            <div align="left"><img class="img-fluid" src="../../static/Density/c3.jpg"><img> </div>
+
+                            <li> Intersect the data with the connected components.</li>
+                            <div align="left"><img class="img-fluid" src="../../static/density/c4.png"><img> </div>
+
+                            <li> Assign points to the corresponding cluster.</li>
+                            <div align="left"><img class="img-fluid" src="../../static/density/c5.png"><img> </div>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!---------------------------------------------Main content end--------------------------------------------->
+        <!------------top Fab button start-------->
+        <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x"
+                style="position: fixed;bottom:5%;right: 5%;">
+            </i></a>
+        <!-----top Fab button end ---------->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

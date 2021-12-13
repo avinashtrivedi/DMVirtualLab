@@ -1,0 +1,23 @@
+
+.dbscan-chart {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    fill: #ccc;
+}
+
+.dbscan-chart .centroid {
+    stroke: #000;
+    stroke-width: 2px;
+}
+
+.dbscan-chart text.label {
+    font-size: 12px;
+    fill: #333;
+}
+
+.dbscan-chart .axis line, .axis path {
+    fill: none;
+    stroke-width: 1px;
+    stroke: #ccc;
+    shape-rendering: crispEdges;
+}

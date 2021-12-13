@@ -1,0 +1,39 @@
+
+
+code{
+	font-family: monospace;
+	font-size: 14px;
+}
+.main-navbar{
+	background-color: rgba(0,0,0,1);
+}
+
+i{
+	color:#555;
+	margin-right:1rem;
+}
+
+.tab{
+	margin:1%;
+}
+
+footer i:hover{
+	font-size: 1rem;
+}
+
+.content-section{
+	padding-top:3rem;
+	padding-left:5rem;
+	padding-right:3rem;
+	padding-bottom:5rem;
+}
+
+
+footer{
+	padding:1rem;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

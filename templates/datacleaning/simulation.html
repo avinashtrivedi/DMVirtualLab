@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/DecisionTree/main.css">
+    <style>
+        img{
+            max-width: min-content;
+            align-self: center;
+        }
+    </style>
+
+  </head>
+  <body>
+    
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/" target="_blank"><img src="../../static/nittlogo.png" style="min-width: 0%;"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> 
+                <li class="nav-item">
+                    <a class="nav-link" href="../../">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">About us</a>
+                </li>
+            </ul>
+        </div></div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!--Main content Start-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="bg-light col-lg-2 col-md-3 col-sm-3 show collapse" id="sidebar">
+            <div class="flex-column">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="aim.html">
+                        <i class="fas fa-book-open"></i> Aim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="theory.html">
+                        <i class="fas fa-book-open"></i>Theory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="procedure.html">
+                        <i class="fas fa-book-open"></i>Procedure</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pretest.html" onclick="buildquiz()">
+                        <i class="fas fa-book-open"></i>Pre-test</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="simulation.html">
+                        <i class="fas fa-flask"></i>Simulation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="posttest.html">
+                        <i class="fas fa-book-open"></i>Post-Test</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="references.html">
+                        <i class="fas fa-book-open"></i>Refernces</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+
+        <div class="col-lg-10 col-md-9 col-sm-9">
+            <div>
+                <div class="px-4 mt-4" style="text-decoration: none;">
+                <div class="row border rounded">
+                 <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                </button>
+                <h4 class="col-10"><a href="../../" class="text-secondary">Data Mining</a> > <a href="aim.html" class="text-secondary">Data cleaning</a> > Simulation</h4></span>
+                </div>
+            </div>
+            <div class="content-section">
+                <div>
+                    <h2 class="display-4">Simulation</h4><hr><br><br>
+                
+                    <h4>DATA  CLEANING  USING  JUPYTER  NOTEBOOK</h2>
+                    <p>
+                        We already discussed about all the method's of data cleaning. Now here we just try to use each of them one by one according to their requirment's .
+                    </p><br>
+                    <h4>Lets start!!!!!</h4><br>
+                    <ul>
+                       <!-- <li>
+                            <p>Here before doing anything In jupyter we have to import pandas and numpy in our jupyter</p><br>  
+                            <img src="../../static/datacleaning/1.png" alt="1st">
+                       </li>
+                        <br>
+
+                    <li>
+                          -->
+                        <p>For doing any operation on the data set we need that data set in our jupyter notebook.
+                        Let we have our data set in .CSV format in our system so for getting that data in jupyter we have to use the following command</p><br>  
+                        <img src="../../static/datacleaning/2.png" alt="2nd" >
+
+                    </li>
+                    <br>
+                    <!-- <li>
+                        <p>
+                            Now if we want to see our data set than then just simply write the name of data set ( Like here we simply write survey_data).
+                            Than on our screen we will see our data in the form of rows and columns.
+                            In our data we have 99 rows and 18 columns.</p><br>
+                           <p> <img src="../../static/datacleaning/4.png" alt="" width="1000" height="250"></p><br>
+                            
+                            <p><img src="../../static/datacleaning/5.png" alt=""></p><br>
+                             <p><img src="../../static/datacleaning/6.png" alt="" width="1000" height="200"></p><br>
+                        
+                    </li>
+            -->
+                    <li>
+                        <p>
+                            Now before applying any of the data cleaning method we need to know how many null values we have in our data set. After that only we can use any data cleaning method’s.
+                            For getting these null values we use the following command.<br></p>
+                            <p><img src="../../static/datacleaning/7.png" alt=""></p>
+                            <p> That command will give us all the column name and the count of the null values in that particular column.</p>
+                           
+                            <img src="../../static/datacleaning/8.png" alt="">
+                        
+                    </li>
+                    <br><br>
+                     <ol>
+                         <h2>Method’s of data cleaning</h2>
+                         <p>
+                            Now following method’s can be used for cleaning the data. here we are not having any particular method for cleaning the data as every method is used for some particular cases.<br>
+                            Here we will try to use them one by one …..
+
+                        </p>
+                     
+                        <br>          
+                        <p>
+                            <h5>1. Removing a column having all null value's :</h5>
+                             Here we can see that we have to columns (i.e  ETC1 and ETC2) which having all of there values null (as there null count is equal to total number of rows). It means that these columns are not useful for us and we can simply remove them.
+                                For removing such columns which having all of it’s values as null we use the following command-<br>
+                                <img src="../../static/datacleaning/9.png" alt=""><br>
+                                Here the word ‘inplace’ is used to do the change permanently in the data set.
+                                Now if we check total number of columns we get that we will having only 16 because these two will be removed from there
+                                <img src="../../static/datacleaning/10.png" alt="">
+                        </p>
+                  
+                        <br><br>
+                        <p>
+                            <h5>2. Removing all the row's having atleast one null value :</h5>
+                             In some cases we can use the following command -<br>
+                               <img src="../../static/datacleaning/12.png" alt=""><br>
+                               This will simply delete all the rows which will having atleast one null value. It will not check for any other condition.
+                               <img src="../../static/datacleaning/13.png" alt="" style="max-width: 100%;"><br><br>
+                               <img src="../../static/datacleaning/14.png" alt="" style="max-width: 100%;"><br>
+                               Here we can see that we have only 66 rows but at the beginning we are having 99 rows means we have 33 rows which are having at least one null value. So dropna() simply delete these 33 rows from over data set.
+                 
+                               Disadvantage : here we may lose our usefull data also because if we are using dropna() then it delete that row from over data set but It may possible that the row which was deleted may have some important data but because of having some or at least one null value the complete row will be deleted . there for dropna() was not  use particularly ( or used very rare cases).
+
+                            </p>
+                  
+
+                            <br><br>
+                        <p>
+                            <h5>3. Replace null value with their column’s mean or median :</h5>
+                             Some times we have data of integer or float type which may have null values. In some cases we are not allowed to remove that null values rows as all the data may be deleted. So in that case we have some optional values (like mean , median, mode etc) of that column so that null values can be replaced by any one of these values.
+                                For getting these values we have to use the following command which will show the mean , median, mode and other values of all particular column’s.
+                             <img src="../../static/datacleaning/15.png" alt=""><br>
+                             Now we can change any null value of any of these columns by mean, median, mode or any other values.
+                             Here we have some null values in age1stcode column so we can simply replace it with it’s mean value using following command.
+                             <img src="../../static/datacleaning/16 (2).png" alt=""><br>
+                             After doing that over age1st column will have zero null values as all the null values are replaced by there mean .
+                             <img src="../../static/datacleaning/16.png" alt="">
+                        </p>
+                    
+
+                        <br><br>
+                        <p>
+                            <h5>4. Cleaning a column of mixed data type : </h5>
+                            <p>Some times our data may have mixed value’s like in that data set in the column “ year of birth” after year we having some not usable strings.</p>
+                             <img src="../../static/datacleaning/17.png" alt="" ><br>
+                             In such cases we can extract a string of particular length ( like here we need year which will be of length 4 so we extract the string of length 4 and other part will be ignored). Than we store that new year in new column “YOB” and  than we replace our “year of birth” column with “YOB”.
+                             <img src="../../static/datacleaning/19.png" alt="">
+                             <img src="../../static/datacleaning/20.png" alt=""><br>
+                             Now our column “year of birth” will have correct data i.e the string of size 4 which represented year -
+                             <img src="../../static/datacleaning/18.png" alt="">
+                        </p>
+                    
+
+                    <br><br>
+                        <p>
+                            <h5>5. Removing all unnecessary :</h5>
+                            Some time’s in our data set we may have some columns which are not usefull for us. So we can simply make a list of such columns and drop them from our data set. <br>
+                           <br> <img src="../../static/datacleaning/22.png" alt="" style="max-width: 100%;"><br><br>
+                            Now our data set will having 13 columns as these three columns are deleted from the data set.
+                             <br><br><br>
+                        </p>
+                    
+                   </ol>
+
+                    <li>
+                        <p>
+                            <h4>Conclusion :</h4>
+                             let's try to understand the following table -
+                            <img src="../../static/datacleaning/23.png" alt="" ><br><br>
+                            Above table is showing that on the scale of 1 how many null values any column have. It is  very difficult to remove all the error’s from the data set as some times we are not allowed to do changing in the data otherwise it will effect the result as well. Above table is showing that almost all columns are having 0.000000(means no null value) but some of them are having some null values.
+                            Here if we want, we can use any of the method as we discuss above for cleaning these columns but here we can see that there value is not 0.0000 but almost near of that value. It means that if we are not doing any change than also it’s fine to having some null values in these columns.
+
+                            
+                        </p>
+                    </li>
+
+
+                    </ul>
+                    
+                   
+                </div>
+            </div>
+        </div>
+      </div>
+    
+    </div>
+
+    <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x" style="position: fixed;bottom:5%;right: 5%;">
+    </i></a>
+
+    <!--Main content end-->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+   
+  </body>
+</html>

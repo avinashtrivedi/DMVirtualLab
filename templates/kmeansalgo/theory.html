@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/kmeansalgo/main.css">
+   
+</head>
+  <body>
+    
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/"><img src="../../static/nittlogo.png"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../aboutus.html">About us</a>
+                </li>
+            </ul>
+        </div></div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!------------------------------Main content Start---------------------------------------------------->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="bg-light col-lg-2 col-md-3 col-sm-3 show colapse" id="sidebar">
+        <div class="flex-column">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="aim.html">
+                        <i class="fas fa-book-open"></i> Aim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="theory.html">
+                        <i class="fas fa-book-open"></i>Theory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="procedure.html">
+                        <i class="fas fa-book-open"></i>Procedure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pretest.html">
+                        <i class="fas fa-book-open"></i>Pre-test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="simulation.html">
+                        <i class="fas fa-flask"></i>Simulation</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="posttest.html">
+                        <i class="fas fa-book-open"></i>Post-Test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="references.html">
+                        <i class="fas fa-book-open"></i>Refernces</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="col-lg-10 col-md-9 col-sm-9">
+            <div class="px-4 mt-4" style="text-decoration: none;">
+                <div class="row border rounded">
+                    <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse" data-target="#sidebar"
+                        aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h4 class="col-10"><a href="../../" class="text-secondary">Data Mining</a> > <a href="aim.html"
+                            class="text-secondary">K-means Algorithm</a> > Theory</h4></span>
+                </div>
+        
+                <div class="container-fluid content-section">
+                    <!-- edit content-section class in main.css-->
+                    <h2 class="display-4">Theory</h2>
+                    <hr style="box-shadow: 2rem;">
+                    <p class="display-6"></p><br>
+                    <b>Cluster analysis or clustering is the task of grouping a set of objects in such a way that objects in the
+                        same group (called a cluster) are more similar (in some sense) to each other than to those in other groups
+                        (clusters).</b><br><br>
+                    <p>Clustering is unsupervised which means there is no label for samples (or data points).
+                        Clustering is used in many industries. Following are some examples of clustering:</p>
+                    <p>
+                    <ul>
+                        <li>
+                            Customer segmentation
+                        </li>
+                        <li>
+                            Image segmentation
+                        </li>
+                        <li>
+                            Image/color compression
+                        </li>
+                        <li>
+                            Detecting anomalies or outliers
+                        </li>
+                    </ul>
+                    </p>
+                    <p>
+                        There are many different clustering algorithms. In this section ,
+                        we will cover one of most common clustering algorithms: K-Means Clustering.
+                    </p>
+                    <br>
+                    
+                    <h4>K-Means Clustering</h4>
+                    <p>K-means clustering aims to partition data into k clusters in a way that data points in
+                        the same cluster are similar and data points in the different clusters are farther apart.or
+                        It is an iterative algorithm that divides the unlabeled dataset into k different clusters in such a way
+                        that each dataset belongs only one group that has similar properties.</p><br>
+                    <p>
+                        The k-means clustering algorithm mainly performs two tasks:
+                    <ol>
+                        <li>
+                            Determines the best value for K center points or centroids by an iterative process.
+                        </li>
+                        <li>
+                            Assigns each data point to its closest k-center. Those data points which are near to the particular k-center,
+                            create a cluster.
+                            Hence each cluster has datapoints with some commonalities, and it is away from other clusters.
+                        </li>
+                    </ol>
+                    </p>
+                    <b>
+                        <p>The below diagram explains the working of the K-means Clustering Algorithm:</p>
+                    </b><br>
+                    <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/k1.png"> </div><br>
+                    
+                    <h6>
+                        <p>
+                            Now, we will discuss about the distance between the objects of the different clusters and the objects of the
+                            same clusters.
+                            We have two type of distance – Intercluster Distance and Intracluster Distance.
+                        </p>
+                    </h6>
+                    <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/interintra.jpg"> </div><br>
+                    <h3>Intercluster Distance:</h3><br>
+                    <p>Intercluster distance is the distance between two objects belonging to two different clusters.</p>
+                    <p>here d(x, y) is the distance between two objects x and y belonging to S and T respectively and
+                        |S| and |T| are the number of objects in clusters S and T respectively. </p>
+                    <p>
+                        It is of 5 types –
+                    </p>
+                    <ol>
+                    
+                        <li><b>Single Linkage Distance</b>: The single linkage distance is the closest distance
+                            between two objects belonging to two different clusters defined as –</li>
+                        <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/s11.jpg"> </div><br>
+                        <li>
+                            <b>Complete Linkage Distance</b> : The complete linkage distance is the distance
+                            between two most remote objects belonging to two different clusters defined as –
+                        </li>
+                        <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/s21.jpg"> </div><br>
+                        <li>
+                            <b>Average Linkage Distance</b> : The average linkage distance is the average distance
+                            between all the objects belonging to two different clusters defined as –
+                        </li>
+                        <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/s31.jpg"> </div><br>
+                        <li>
+                            <b>Centroid Linkage Distance</b> : The centroid linkage distance is the distance between
+                            the centers vs and vt of two clusters S and T respectively, defined as –
+                    
+                        </li>
+                        <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/s41.jpg"> </div><br>
+                        <li>
+                            <b>Average Centroid Linkage Distance</b> : The average centroid linkage distance is the distance between
+                            the center of a cluster and all the objects belonging to a different cluster, defined as –
+                        </li>
+                        <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/s61.jpg"> </div><br>
+                        <br>
+                      </ol>  
+                        <h3>Intracluster Distance:</h3><br>
+                        <p>Intracluster distance is
+                            the distance between two objects belonging to same cluster. It is of 3 types –</p>
+                        <ol>
+                            <li>
+                                <b>Complete Diameter Distance</b> : The complete diameter distance
+                                the distance between two most remote objects belonging to the same cluster defined as –
+                            </li>
+                            <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/s7.jpg"> </div><br>
+                            <li>
+                                <b>Average Diameter Distance</b> : The average diameter distance is
+                                the average distance between all the objects belonging to the same cluster defined as –
+                            </li>
+                            <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/s8.jpg"> </div><br>
+                            <li>
+                                <b>Centroid Diameter Distance</b> : The centroid diameter distance is double average
+                                distance between all of the objects and the cluster center of s defined as –
+                            </li>
+                            <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/s9.jpg"> </div><br>
+                            <p>Where </p><br>
+                    
+                            <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/s10.jpg"> </div><br>
+                    
+                        </ol>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    </div>
+    <!---------------------------------------------Main content end--------------------------------------------->
+    
+    <!------------top Fab button start-------->
+    <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x" style="position: fixed;bottom:5%;right: 5%;">
+    </i></a>
+    <!-----top Fab button end ---------->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+   
+  </body>
+</html>

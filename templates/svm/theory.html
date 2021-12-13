@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/svm/main.css">
+
+</head>
+
+<body>
+
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between"
+        style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/"><img src="../../static/nittlogo.png"> National Institute of
+            Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../aboutus.html">About us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!------------------------------Main content Start---------------------------------------------------->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="bg-light col-lg-2 col-md-3 col-sm-3 show colapse" id="sidebar">
+                <div class="flex-column">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../svm/aim.html">
+                                <i class="fas fa-book-open"></i> Aim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../svm/theory.html">
+                                <i class="fas fa-book-open"></i>Theory</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../svm/procedure.html">
+                                <i class="fas fa-book-open"></i>Procedure</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../svm/pretest.html">
+                                <i class="fas fa-book-open"></i>Pre-test</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../svm/simulation.html">
+                                <i class="fas fa-flask"></i>Simulation</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../svm/posttest.html">
+                                <i class="fas fa-book-open"></i>Post-Test</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../svm/references.html">
+                                <i class="fas fa-book-open"></i>Refernces</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-lg-10 col-md-9 col-sm-9">
+                <div class="px-4 mt-4" style="text-decoration: none;">
+                    <div class="row border rounded">
+                        <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse"
+                            data-target="#sidebar" aria-controls="sidebar" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <h4 class="col-10"><a href="../../" class="text-secondary">Data Mining</a> > <a href="aim.html"
+                                class="text-secondary">Support Vector Machine</a> > Theory</h4></span>
+                    </div>
+                    <div class="display-5 content-section">
+                        <h2 id="top" class="display-4">Theory</h2>
+                        <hr> <br><br>
+                        <h4>What is Support Vector Machine?</h4>
+                        <p>
+                            A Support Vector Machine (SVM) is a supervised machine learning algorithm that can be
+                            employed for both classification and regression purposes.
+                            It performs classification by finding the hyperplane that maximizes the margin between the
+                            two classes. The vectors (cases) that define the hyperplane are the support vectors. <br>
+                            Svm is of two types:-
+                        <ul>
+                            <li>Linear svm -
+                                The data is linearly separable.</li>
+                            </li>
+
+                            <li>Non-linear svm - The data is not linearly separable.</li>
+                        </ul>
+                        <br>
+                        <h5>What is a hyperplane?</h5>
+                        <p>Hyperplane can be think of decision boundaries that classify data points into their
+                            respective classes in a n-dimensional space. Data points falling on either side of the
+                            hyperplane can be attributed to different classes. <br>
+                            It is a generalization of a plane,in n-dimension it is called a hyperplane.
+                        </p>
+                        <img src="../../static/svm/svm.png" alt="hyperplane" width=75% height=60%>
+                        <br><br>
+                        <h5>What is margin?</h5>
+                        <p>
+                            Margin is defined as a distance between the support vectors and the hyperplane. <br> The
+                            main task of (SVM) to maximize the margin between support vectors as shown below:<br>
+                            <img src="../../static/svm/SVM_optimize.png" alt="margin"> <br><img
+                                src="../../static/svm/SVM_optimize_1.png" alt=""><br>
+                        </p><br>
+                        <h5>What are Support vectors?</h5>
+                        <p>Support vectors are the points that are close to hyperplane.These points helps to find the
+                            hyperplane which helps to maximize the margin. These points are the heart of SVM without
+                            these points SVM can't be implemented. It's the most difficult task to find these points. As
+                            support vectors changes, hyperplane also changes. <br><br>
+                            <img src="../../static/svm/SVM_2.png" alt="s_v">
+                        </p>
+
+
+
+
+
+                        <br>
+                        <!-- <div align="center"><img src="../../static/svm/k1.png"> </div><br> -->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!---------------------------------------------Main content end--------------------------------------------->
+
+        <!------------top Fab button start-------->
+        <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x"
+                style="position: fixed;bottom:5%;right: 5%;">
+            </i></a>
+        <!-----top Fab button end ---------->
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>

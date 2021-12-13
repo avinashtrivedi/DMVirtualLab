@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../static/knnalgorithm/main.css">
+
+</head>
+
+<body>
+
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/" target="_blank"><img src="../../static/nittlogo.png"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../aboutus.html">About us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!-------------------------------------------Main content Start--------------------------------------------->
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="bg-light col-lg-2 col-md-3 col-sm-3 show collapse" id="sidebar">
+                <div class="flex-column">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="aim.html">
+                                <i class="fas fa-book-open"></i> Aim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="theory.html">
+                                <i class="fas fa-book-open"></i>Theory</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="procedure.html">
+                                <i class="fas fa-book-open"></i>Procedure</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pretest.html" onclick="buildquiz()">
+                                <i class="fas fa-book-open"></i>Pre-test</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="simulation.html">
+                                <i class="fas fa-flask"></i>Simulation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="posttest.html">
+                                <i class="fas fa-book-open"></i>Post-Test</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="references.html">
+                                <i class="fas fa-book-open"></i>Refeernces</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-9 col-sm-9">
+                <div class="px-4 mt-4" style="text-decoration: none;">
+                    <div class="row border rounded">
+                        <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                </button>
+                        <h4 class="col-10"><a href="../../index.html" class="text-secondary">Data Mining</a> > <a href="aim.html" class="text-secondary">KNN Algorithm</a> > Theory</h4>
+                        </span>
+                    </div>
+                    <div class="display-5 content-section">
+                        <h2 id="top" class="display-4">Theory</h2>
+                        <hr>
+                        <br><br>
+                        <h4>What is KNN ALGORITHM?</h4><br>
+                        <p>
+                            The intuition behind the KNN algorithm is one of the simplest of all the supervised machine learning algorithms. It simply calculates the distance of a new data point to all other training data points. The distance can be of any type e.g Euclidean or
+                            Manhattan etc. It then selects the K-nearest data points, where K can be any integer. <br><br> Finally it assigns the data point to the class to which the majority of the K data points belong. K-nearest
+                            neighbors (KNN) algorithm is a type of supervised ML algorithm which can be used for both classification as well as regression predictive problems. However, it is mainly used for classification predictive problems in industry.<br><br>                            K-NN algorithm assumes the similarity between the new case/data and available cases and put the new case into the category that is most similar to the available categories. K-NN algorithm stores all the available data and classifies
+                            a new data point based on the similarity. This means when new data appears then it can be easily classified into a well suite category by using K- NN algorithm.
+                            <div align="center"><img src="../../static/knnalgorithm/k1.png"></div>
+                            <br><br>Let's see this algorithm in action with the help of a simple example. Suppose you have a dataset with two variables, which when plotted, looks like the one in the following figure.
+
+                            <div align="center"><img src="../../static/knnalgorithm/k9.png"></div><br><br> Your task is to classify a new data point with 'X' into "Blue" class or "Red" class. The coordinate values of the data point are x=45 and y=50. Suppose the value of
+                            K is 3. The KNN algorithm starts by calculating the distance of point X from all the points. It then finds the 3 nearest points with least distance to point X. This is shown in the figure below. The three nearest points have
+                            been encircled.
+
+                            <div align="center"><img src="../../static/knnalgorithm/k10.png"></div><br><br> The final step of the KNN algorithm is to assign new point to the class to which majority of the three nearest points belong. From the figure above we can see that
+                            the two of the three nearest points belong to the class "Red" while one belongs to the class "Blue". Therefore the new data point will be classified as "Red".
+                        </p><br><br>
+
+
+                        <h4>KNN Algorithm used in data mining are of two main properties:</h4><br>
+                        <p>
+                            <strong>Lazy learning algorithm - </strong> KNN is a lazy learning algorithm because it does not have a specialized training phase and uses all the data for training while classification.<br><br>
+                            <strong>Non-parametric learning algorithm - </strong> KNN is also a non-parametric learning algorithm because it doesn’t assume anything about the underlying data.
+                        </p><br><br>
+
+                        <h4>When do we use KNN algorithm?</h4><br>
+                        <p>
+                            KNN can be used for both classification and regression predictive problems. However, it is more widely used in classification problems in the industry. To evaluate any technique we generally look at 3 important aspects:<br><br>
+                            <ul>
+
+                                <li>Ease to interpret output</li>
+                                <li>Calculation time</li>
+
+                                <li>Predictive Power</li>
+                            </ul>
+                            Let us take a few examples to place KNN in the scale :<br><br>
+                            <div align="center"><img src="../../static/knnalgorithm/k8.png"></div><br><br> </p><br>
+
+                        <h4>Working of KNN Algorithm</h4><br>
+                        <p>
+                            K-nearest neighbors (KNN) algorithm uses ‘feature similarity’ to predict the values of new datapoints which further means that the new data point will be assigned a value based on how closely it matches the points in the training set. We can understand
+                            its working with the help of following steps:
+                            <ol>
+                                <li>Step 1 − For implementing any algorithm, we need dataset. So during the first step of KNN, we must load the training as well as test data.</li><br>
+                                <li>Step 2 − Next, we need to choose the value of K i.e. the nearest data points.K can be any integer.</li><br>
+                                <li>Step 3 − For each point in the test data do the following − </li><br> 3.1 − Calculate the distance between test data and each row of training data with the help of any of the method namely: Euclidean,<br> Manhattan or Hamming
+                                distance. The most commonly used method to calculate distance is Euclidean.<br> 3.2 − Now, based on the distance value, sort them in ascending order.<br> 3.3 − Next, it will choose the top K rows from the sorted array.<br>                                3.4 − Now, it will assign a class to the test point based on most frequent class of these rows.<br><br>
+
+                                <li>Step 4 − End</li><br>
+                            </ol>
+                        </p>
+
+
+                        <h4>How to select the value of K in the K-NN Algorithm?</h4><br>
+
+                        <strong>Below are some points to remember while selecting the value of K in the K-NN algorithm:</strong><br><br>
+                        <ul>
+                            <li>There is no particular way to determine the best value for "K", so we need to try some values to find the best out of them. The most preferred value for K is 5.</li>
+                            <li>A very low value for K such as K=1 or K=2, can be noisy and lead to the effects of outliers in the model.</li>
+                            <li>Large values for K are good, but it may find some difficulties.</li>
+                        </ul>
+                        <br>
+                        <h4>How to find the k-Nearest Neighbors?</h4>
+                        <br>
+                        <p>To find the nearest neighbors, Algorithm calculates the distance between the new data point and training data points. And then shortlist the points which are closer to the new data point. These shortlisted points are known as the
+                            nearest neighbors to the new data point. Now two question arises how to calculate the distance between points and how many (k) closer points to be shortlisted. Decision of k will discuss in next heading, now let’s understand
+                            how to calculate the distance.</p>
+                        <br>
+                        <p>The most commonly used distance measures are Euclidean and Manhattan for continuous value prediction that is regression and Hamming Distance for categorical or classification problems.</p>
+                        <br>
+
+                        <p>
+                            <strong>1. Euclidean Distance: - </strong>Euclidean distance is calculated as the square root of the sum of the squared differences between a new point (X2) and an existing point (X1).
+                            <br>
+                            <div align="center"> <img src="../../static/knnalgorithm/k2.png"><br>
+                                <img src="../../static/knnalgorithm/k3.png"> </p>
+                        </div>
+                        <br>
+                        <p>
+                            <strong>2. Manhattan Distance: -</strong>This is the distance between real vectors using the sum of their absolute difference.
+                            <br>
+                            <div align="center"> <img src="../../static/knnalgorithm/k4.png"><br>
+                                <img src="../../static/knnalgorithm/k5.png"> </p>
+                        </div>
+                        </p>
+
+                        <p>
+                            <strong>3. Hamming Distance: -</strong> It is used for categorical variables. If the value (x) and the value (y) are same, the distance D will be equal to 0 . Otherwise D=1.
+                            <br>
+                            <div align="center"> <img src="../../static/knnalgorithm/k6.png"><br>
+                                <img src="../../static/knnalgorithm/k7.png"> </p>
+                        </div>
+                        </p>
+                        <br>
+                        <h4>Advantages of KNN Algorithm</h4><br>
+                        <ol>
+                            <li> It is simple to implement.</li>
+                            <li>It is very simple algorithm to understand and interpret.</li>
+                            <li> It is robust to the noisy training data</li>
+                            <li>It can be more effective if the training data is large.</li>
+                            <li>It is very useful for nonlinear data because there is no assumption about data in this algorithm.</li>
+                            <li>It is a versatile algorithm as we can use it for classification as well as regression.</li>
+                            <li>It has relatively high accuracy but there are much better supervised learning models than KNN.</li>
+                        </ol>
+                        <br>
+
+                        <h4>Disadvantages of KNN Algorithm</h4><br>
+                        <ol>
+                            <li>Always needs to determine the value of K which may be complex some time.</li>
+                            <li>The computation cost is high because of calculating the distance between the data points for all the training samples.</li>
+                            <li> It is computationally a bit expensive algorithm because it stores all the training data.</li>
+                            <li>High memory storage required as compared to other supervised learning algorithms.</li>
+                            <li>Prediction is slow in case of big N.</li>
+                            <li>It is very sensitive to the scale of data as well as irrelevant features.</li>
+                        </ol>
+
+                        <p>
+                            <h4>Applications of KNN Algorithm: </h4>
+                            <p>KNN as a data mining technique has a wide variety of applications in classification as well as regression. Some of the applications of this method are mentioned below: </p>
+                            <br>
+                            <ul>
+                                <li>
+                                    <p>
+                                        <strong>Text mining</strong>: The KNN algorithm is one of the most popular algorithms for text categorization or text mining. Some of the most recent works on this topic are for instance. Different numbers of nearest
+                                        neighbors are used for different classes in this approach, rather than a fixed number across all classes. In this way, the only parameter that needs to be chosen by the user when using KNN, the K value, becomes
+                                        less sensible and hence it does not need to be carefully chosen as in the standard algorithm. Indeed, the probability that an unknown sample belongs to a class is computed by using only some top Kn nearest neighbors
+                                        for that class. The Kn value is derived from K according to the size of the corresponding class in the training set. This modified KNN was efficient and less sensible to the K values when applied to text mining
+                                        problems.
+                                        <br>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <strong>Agriculture</strong>: In general, KNN is applied less than other data mining techniques in agriculture related fields. It has been applied, for instance, for simulating daily precipitations and other weather
+                                        variables. Another interesting application is the evaluation of forest inventories and for estimating forest variables. In these applications, satellite imagery is used, with the aim of mapping the land cover and
+                                        land use with few discrete classes. The other applications of the k-NN method in agriculture include climate forecasting and estimating soil water parameters.
+                                        <br>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <strong>Finance</strong>: Data mining as a process of discovering useful patterns and correlations has its own niche in financial modeling. Similar to other computational methods almost every data mining method
+                                        and technique has been used in financial modeling. An incomplete list includes a variety of linear and nonlinear models multi-layer neural networks, k-means and hierarchical clustering, k-nearest neighbors, decision
+                                        tree analysis, regression (logistic regression, general multiple regression), ARIMA, principal component analysis, and Bayesian learning. Stock market forecasting is one of the most core financial tasks of KNN.
+                                        Stock market forecasting includes uncovering market trends, planning investment strategies, identifying the best time to purchase the stocks, and what stocks to purchase. <br>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <strong>Medicine</strong>: Predict whether a patient, hospitalized due to a heart attack, will have a second heart attack. The prediction is to be based on demographic, diet and clinical measurements for that patient.
+                                        Estimate the amount of glucose in the blood of a diabetic person, from the infrared absorption spectrum of that person’s blood. Identify the risk factors for prostate cancer, based on clinical and demographic variables.
+                                        The KNN algorithm has been also applied for analyzing micro-array gene expression data, where the KNN algorithm has been coupled with genetic algorithms, which are used as a search tool. Other applications include
+                                        the prediction of solvent accessibility in protein molecules, the detection of intrusions in computer systems, and the management of databases of moving objects such as computer with wireless connections.
+                                        <br>
+
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <strong>Politics</strong>: With the help of KNN algorithms, we can classify a potential voter into various classes like “Will Vote”, “Will not Vote”, “Will Vote to Party ‘Congress’, “Will Vote to Party ‘BJP’.
+                                    </p><br>
+                                </li>
+                                <h5>Some of other applications of KNN in finance are mentioned below:</h5><br>
+
+                                <li>Forecasting stock market: Predict the price of a stock, on the basis of company performance measures and economic data.</li>
+                                <li>Currency exchange rate</li>
+                                <li>Bank bankruptcies </li>
+                                <li> Understanding and managing financial risk</li>
+                                <li> Trading futures</li>
+                                <li>Credit rating</li>
+                                <li>Loan management</li>
+                                <li>Bank customer profiling</li>
+                                <li>Money laundering analyses</li>
+                                <li>Speech Recognition</li>
+                                <li>Handwriting Detection</li>
+                                <li>Image Recognition</li>
+                                <li> Video Recognition</li>
+                            </ul>
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!---------------------------------------------Main content end--------------------------------------------->
+
+        <!------------top Fab button start-------->
+        <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x" style="position: fixed;bottom:5%;right: 5%;">
+    </i></a>
+        <!-----top Fab button end ---------->
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

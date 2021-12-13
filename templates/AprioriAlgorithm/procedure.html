@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/AprioriAlgorithm/main.css">
+    <style>
+            .steps {
+         line-height:250%;
+        }
+    </style>
+  </head>
+  <body>
+    
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="#"><img src="../../static/nittlogo.png"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../aboutus.html">About Us</a>
+                </li>
+            </ul>
+        </div></div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!----------------------------------------Main content Start----------------------------------->
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="bg-light col-lg-2 col-md-3 col-sm-3 show collapse" id="sidebar">
+        <div class="flex-column">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="aim.html">
+                    <i class="fas fa-book-open"></i>Aim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="theory.html">
+                    <i class="fas fa-book-open"></i>Theory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="procedure.html">
+                    <i class="fas fa-book-open"></i>Procedure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pretest.html" onclick="buildquiz()">
+                    <i class="fas fa-book-open"></i>Pre-Test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="simulation.html">
+                    <i class="fas fa-flask"></i>Simulation</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="posttest.html">
+                    <i class="fas fa-book-open"></i>Post-Test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="references.html">
+                    <i class="fas fa-book-open"></i>References</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+
+        <!--main-->
+        <div class="col-lg-10 col-md-9 col-sm-9">
+            <div class="px-4 mt-4" style="text-decoration: none;">
+                <div class="row border rounded">
+                 <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                </button>
+                <h4 class="col-10"><a href="../../index.html" class="text-secondary">Data Mining</a> > <a href="aim.html" class="text-secondary">Apriori Algorithm</a> > Procedure</h4></span>
+                </div>
+             
+            <div class="container-fluid content-section">
+        		<h2 class="display-4">Procedure</h2><hr><br><br>
+        		<div class="display-6">
+                    
+        		<h5>Before moving on to the procedure, let us understand some basic terms related to Associaton Rule Mining & Apriori Algorithm.</h5>
+
+                <br>
+
+                <ol>
+                    <li>
+                        <p><b>Support_count(X) :</b> Number of transactions in which X appears. If X is A union B then it is the number of transactions in which A and B both are present.</p>
+                    </li>
+                    <li>
+                        <p><b>Support :</b> It is one of the measure of interestingness. This tells about usefulness and certainty of rules. 5% Support means total 5% of transactions in database follow the rule.</p>
+                        <p><i>Support(A -> B) = Support_count(A ∪ B)</i></p>
+                    </li>
+                    <li>
+                        <p><b>Confidence :</b> A confidence of 60% means that 60% of the customers who purchased a milk and bread also bought butter.</p>
+                        <p><i>Confidence(A -> B) = Support_count(A ∪ B) / Support_count(A)</i></p>
+                    </li>
+                    <li>
+                        <p><b>Maximal Itemset :</b> An itemset is maximal frequent if none of its supersets are frequent.</p>
+                    </li>
+                    <li>
+                        <p><b>Closed Itemset :</b> An itemset is closed if none of its immediate supersets have same support count same as Itemset.</p>
+                    </li>
+                    <li>
+                        <p><b>K- Itemset :</b> Itemset which contains K items is a K-itemset. So it can be said that an itemset is frequent if the corresponding support count is greater than minimum support count.</p>
+                    </li>
+                </ol>
+                
+                <br>
+
+        		<h4>Steps for Apriori Algorithm</h4>
+
+                <h5>Below are the steps for the apriori algorithm:</h5>
+
+                <ul type="none">
+                    <li class="steps">
+                    <b>Step-1:</b> Determine the support of itemsets in the transactional database, and select the minimum support and confidence.
+                    </li>
+                    <li class="steps">
+                    <b>Step-2:</b> Take all supports in the transaction with higher support value than the minimum or selected support value.
+                    </li>
+                    <li class="steps">
+                    <b>Step-3:</b> Find all the rules of these subsets that have higher confidence value than the threshold or minimum confidence.
+                    </li>
+                    <li class="steps">
+                    <b>Step-4:</b> Sort the rules as the decreasing order of lift.
+                    </li>
+                </ul>
+
+                <h4>Example to show working of Apriori Algorithm:</h4>
+
+                <h6>Suppose we have the following dataset that has various transactions, and from this dataset, we need to find the frequent itemsets and generate the association rules using the Apriori algorithm:</h6>
+
+                <center><img src="../../static/AprioriAlgorithm/pic1.png"></center><br>
+
+                <h6>Given Minimum Support = 50% & Minimum Confidence = 70%</h6>
+                <p><b>Solution:</b></p>
+
+                <p>Now, creating 1-itemsets from the given data. So, We have:</p>
+
+                <center><img src="../../static/AprioriAlgorithm/pic2.png"></center><br>
+
+                <p>Discarding Itemset 4 because its support is 25% which is less than Minimum Support(50%).</p>
+
+                <p>Now, creating 2-itemsets from the given data. So, We have:</p>
+
+                <center><img src="../../static/AprioriAlgorithm/pic3.png"></center><br>
+
+                <p>Discarding Itemsets having support less than Minimum Support(50%).</p>
+
+                <p>Now, creating 3-itemsets from the given data. So, We have:</p>
+
+                <center><img src="../../static/AprioriAlgorithm/pic4.png"></center><br>
+
+                <p>Discarding Itemsets having support less than Minimum Support(50%).</p>
+
+                <p>Now, creating 4-itemsets from the given data. So, We have:</p>
+
+                <center><img src="../../static/AprioriAlgorithm/pic5.png"></center><br>
+
+                <p>The only itemset here is having support less than Minimum Support(50%) so it is discarded.</p>
+
+                <p>So, The frequent itemsets are:<br>
+
+                <center><img src="../../static/AprioriAlgorithm/pic6.png"></center><br>
+
+                <p>Now, we have to find the association rules for the subsets. </p>
+
+                <p>To generate the association rules, first, we will create a new table with all the possible rules from each combination of each frequent item set. For all the rules, we will calculate the Confidence. After calculating the confidence value for all rules, we will discard the rules that have less confidence than the minimum confidence(70%). We have:</p>
+
+                <center><img src="../../static/AprioriAlgorithm/pic7.png"></center><br>
+
+                <p>So, The association rules are:<br>
+
+                <center><img src="../../static/AprioriAlgorithm/pic8.png"></center><br>
+
+                <p>So, that is how apriori algorithm works.</p>
+        	</div>
+        	</div>
+        </div>
+        </div>
+      </div>
+      
+    </div>
+    <!----------------------------------------Main content end-------------------------------------->
+
+    <!------------top Fab button start-------->
+    <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x" style="position: fixed;bottom:5%;right: 5%;">
+    </i></a>
+    <!-----top Fab button end ---------->
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+   
+  </body>
+</html>

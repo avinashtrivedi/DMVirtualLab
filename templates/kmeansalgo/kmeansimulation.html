@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+   
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+    <script type="text/javascript" src="https://chir.ag/projects/ntc/ntc.js"></script>
+    <!-- <script type="text/javascript" src="../../static/kmeansalgo/kmeans.js"></script>-->
+    <script src="colores.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../static/kmeansalgo/kmeans.css">
+
+    <title>K-means Simulation</title>
+<script>
+    function cleardata() {
+        window.location.reload();
+        document.getElementById('datapoints').value = '';
+        document.getElementById('nocluster').value = '';
+    }
+    
+</script>
+
+  </head>
+  
+  <body>
+    <h1 align="center" class="mt-5">K-means Algorithm Simulation</h1><hr>
+    <div class="border border-info rounded p-3 m-3 my-5">
+        <h4>For Simulation purpose </h4>
+        <p>The Data are randomly generated x,y-coordinates between 0 and the width/height of the canvas that is (500px,500px).
+        </p>  
+        <h4>Algorithm Used for simulation</h4>
+        <ol>
+            <li>The algorithm will be initialized with n data points given as input and k as number of cluster.</li>
+            
+            <li>When the algorithm starts, each point is assigned the color of the closest centroid, forming k clusters. Closest
+                is defined as the smallest Euclidean distance between two points.</li>
+            <li>
+                The centroids are moved to the center of the cluster.      
+            </li>
+            <li>
+                Steps 2 and 3 are repeated until the maximum number of iterations(10 iteration default) is reached.
+            </li>
+        </ol>
+    </div>
+<div align="center" class="card " style="margin-left: 10rem; width: 80%; height:100%">
+    <div class="row no-gutters">
+        <div class="rounded mx-auto d-block">
+            <div id="kmeans"  class="kmeans-chart img-thumbnail"></div>
+        </div>
+        <div class="border">
+            <div class="card-body">
+                <label><b>Enter Number of data points</b></label><br>
+                <input class="form-control" id="datapoints" type="text" placeholder="Enter data points" required>
+                <br><br>
+                <label><b>Number of clusters</b> </label><br>
+                <input class="form-control" id="nocluster" type="text" placeholder="No. of cluster" required><br><br>
+                <button class="btn bg-primary" onclick="myFunction()" id="btn1">Iterate Algorithm</button>
+                <button class="btn bg-danger" onclick="cleardata()"> clear</button>
+                
+            </div>
+        </div>
+    </div>
+    <div class="img-thumbnail ">
+        <h5>Centroids Position</h5>
+        <p id="demo"></p>
+    </div>
+    
+    
+</div>
+
+    
+<br>
+<br>
+<script>
+    var count = 0;
+    function kMeans(elt, w, h, numPoints, numClusters, maxIter) {
+        // the current iteration
+
+
+        var iter = 1,
+            centroids = [],
+            points = [];
+
+        var margin = { top: 30, right: 20, bottom: 20, left: 30 },
+            width = w - margin.left - margin.right,
+            height = h - margin.top - margin.bottom;
+
+        var colors = d3.scale.category20c().range();
+
+        var svg = d3.select(elt).append("svg")
+            .style("width", width + margin.left + margin.right)
+            .style("height", height + margin.top + margin.bottom);
+
+        var group = svg.append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        +
+            svg.append("g")
+                .append("text")
+                .attr("class", "label")
+                .attr("transform", "translate(" + (width - margin.left - margin.right) +
+                    "," + (height + margin.top + margin.bottom) + ")")
+                .text("")
+                .attr("id","svgArea");
+
+        /**
+         * Computes the euclidian distance between two points.
+         */
+        function getEuclidianDistance(a, b) {
+            var dx = b.x - a.x,
+                dy = b.y - a.y;
+            return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+        }
+
+        /**
+         * Returns a point with the specified type and fill color and with random 
+         * x,y-coordinates.
+         */
+        function getRandomPoint(type, fill) {
+            return {
+                x: Math.round(Math.random() * width),
+                y: Math.round(Math.random() * height),
+                type: type,
+                fill: fill
+            };
+        }
+
+        /** 
+         * Generates a specified number of random points of the specified type.
+         */
+        function initializePoints(num, type) {
+            var result = [];
+            for (var i = 0; i < num; i++) {
+                var color = colors[i];
+                if (type !== "centroid") {
+                    color = "#ccc";
+                }
+                var point = getRandomPoint(type, color);
+                point.id = point.type + "-" + i;
+                result.push(point);
+            }
+            return result;
+        }
+
+        /**
+         * Find the centroid that is closest to the specified point.
+         */
+        function findClosestCentroid(point) {
+            var closest = { i: -1, distance: width * 2 };
+            centroids.forEach(function (d, i) {
+                var distance = getEuclidianDistance(d, point);
+                // Only update when the centroid is closer
+                if (distance < closest.distance) {
+                    closest.i = i;
+                    closest.distance = distance;
+                }
+            });
+            return (centroids[closest.i]);
+        }
+
+        /**
+         * All points assume the color of the closest centroid.
+         */
+        function colorizePoints() {
+            points.forEach(function (d) {
+                var closest = findClosestCentroid(d);
+                d.fill = closest.fill;
+            });
+        }
+
+        /**
+         * Computes the center of the cluster by taking the mean of the x and y 
+         * coordinates.
+         */
+        function computeClusterCenter(cluster) {
+
+
+            return [
+                d3.mean(cluster, function (d) { return d.x; }),
+                d3.mean(cluster, function (d) { return d.y; })
+            ];
+        }
+
+        /**
+         * Moves the centroids to the center of their cluster.
+         */
+        function moveCentroids() {
+
+            centroids.forEach(function (d) {
+                // Get clusters based on their fill color
+                var cluster = points.filter(function (e) {
+                    return e.fill === d.fill;
+                });
+                // Compute the cluster centers
+                var center = computeClusterCenter(cluster);
+                // Move the centroid
+
+
+
+                d.x = center[0];
+                d.y = center[1];
+            });
+        }
+
+        /**
+         * Updates the chart.
+         */
+        function update() {
+
+            var data = points.concat(centroids);
+
+            // The data join
+            var circle = group.selectAll("circle")
+                .data(data);
+
+            // Create new elements as needed
+            circle.enter().append("circle")
+                .attr("id", function (d) { return d.id; })
+                .attr("class", function (d) { return d.type; })
+                .attr("r", 5);
+
+            // Update old elements as needed
+            circle.transition().delay(100).duration(1000)
+                .attr("cx", function (d) { return d.x; })
+                .attr("cy", function (d) { return d.y; })
+                .style("fill", function (d) { return d.fill; });
+
+            // Remove old nodes
+            circle.exit().remove();
+        }
+
+        /**
+         * Updates the text in the label.
+         */
+        function setText(text) {
+            svg.selectAll(".label").text(text);
+        }
+
+        /**
+         * Executes one iteration of the algorithm:
+         * - Fill the points with the color of the closest centroid (this makes it 
+         *   part of its cluster)
+         * - Move the centroids to the center of their cluster.
+         */
+        function displayArrayObjects(arrayObjects) {
+            var len = arrayObjects.length, text="";
+            text += "iteration " + iter + "<br>";
+            for (var i = 0; i < len; i++) {
+                var myObject = arrayObjects[i];
+                var color = "";
+                XandY = "";
+                var ID="";
+                for (var it in myObject) {
+
+                    if(it==="x" || it ==="y" ){
+                            XandY += (it + ": " + myObject[it] + " ");
+                    }
+                    if(it === "fill")
+                    {
+                        color= myObject[it];
+                    }
+                    // if (it === "id") {
+                    //     ID = myObject[it];
+                    // }
+                    
+                }
+                var n_match = ntc.name(color);
+                // n_rgb = n_match[0]; // RGB value of closest match
+                n_name = n_match[1]; // Text string: Color name
+
+                text += "Centroid_color = "+n_name+ ", coordinates = " + "(" +XandY+ ")"+"<br/>";
+                // result += text.fontcolor("color");
+                document.getElementById("demo").innerHTML = text;
+            }
+
+            
+        }
+        function iterate() {
+
+            // Update label
+            setText("Iteration " + iter + " of " + maxIter);
+
+            // Colorize the points
+            colorizePoints();
+
+
+            //printing centroids on to screen on each iterations .......m
+
+            // var myString = JSON.stringify(centroids);
+            // for (var i = 0; i < numClusters; i++){
+            //     document.getElementById("demo").innerHTML = "x: " + myString[i].x + "y: " + myString[i].y + "<br>";
+            // }
+            // for (var i = 0; i < numClusters ; i++){
+            //     var value= JSON.stringify(centroids[i]);
+            //      document.getElementById("demo").innerHTML += "x: " + value.x + " y: " + value.y + "<br>";
+
+            // }
+               
+            // document.getElementById("demo").innerHTML = myString.x+ myString.y;
+
+                // document.getElementById("demo").innerHTML = JSON.stringify(centroids);
+            displayArrayObjects(centroids);
+            // Move the centroids
+            moveCentroids();
+
+            // Update the chart
+            update();
+
+        }
+
+        /** 
+         * The main function initializes the algorithm and calls an iteration every 
+         * two seconds.
+         */
+        function initialize() {
+
+            // Initialize random points and centroids
+            centroids = initializePoints(numClusters, "centroid");
+            points = initializePoints(numPoints, "point");
+
+            // initial drawing
+
+            update();
+
+
+            var interval = setInterval(function () {
+                if (iter < maxIter + 1) {
+                    iterate();
+                    iter++;
+                } else {
+                    clearInterval(interval);
+                    setText("Done");
+                }
+            }, 3 * 1000);
+        }
+
+        // Call the main function
+        initialize();
+    }
+    function myFunction() {
+        var numPoints = document.getElementById("datapoints").value;
+        var numCluster = document.getElementById("nocluster").value;
+        count = count + 1;
+        if (count >= 2) {
+            window.location.reload();
+            count = 0;
+        }
+        kMeans("#kmeans", 500, 500, numPoints, numCluster, 10);
+
+
+    }
+</script>
+    
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+  <!-- <script type="text/javascript" >kMeans("#kmeans", 500, 500, numPoints, numCluster, 10);</script> -->
+  <!-- function kMeans(elt, w, h, numPoints, numClusters, maxIter) -->
+  </body>
+  </html> 

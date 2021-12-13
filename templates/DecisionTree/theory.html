@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/DecisionTree/main.css">
+
+  </head>
+  <body>
+    
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/" target="_blank"><img src="../../static/nittlogo.png"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../aboutus.html">About us</a>
+                </li>
+            </ul>
+        </div></div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!-------------------------------------------Main content Start--------------------------------------------->
+    <div class="container-fluid">
+      
+      <div class="row">
+        <div class="bg-light col-lg-2 col-md-3 col-sm-3 show collapse" id="sidebar">
+        <div class="flex-column">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="aim.html">
+                    <i class="fas fa-book-open"></i> Aim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="theory.html">
+                    <i class="fas fa-book-open"></i>Theory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="procedure.html">
+                    <i class="fas fa-book-open"></i>Procedure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pretest.html" onclick="buildquiz()">
+                    <i class="fas fa-book-open"></i>Pre-test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="simulation.html">
+                    <i class="fas fa-flask"></i>Simulation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="posttest.html">
+                    <i class="fas fa-book-open"></i>Post-Test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="references.html">
+                    <i class="fas fa-book-open"></i>Refernces</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="col-lg-10 col-md-9 col-sm-9">
+            <div class="px-4 mt-4" style="text-decoration: none;">
+                <div class="row border rounded">
+                 <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                </button>
+                <h4 class="col-10"><a href="../../index.html" class="text-secondary">Data Mining</a> > <a href="aim.html" class="text-secondary">Decision Tree</a> > Theory</h4></span>
+                </div>
+        	<div class="display-5 content-section">	
+        		<h2 id="top" class="display-4">Theory</h2>
+                <hr>
+                <br><br>
+
+        		<h4>What is Decision Tree?</h4><br>
+        		<p>
+        			Decision Tree Mining is a type of data mining technique which is used to build Classification Models. It builds classification models in the form of a tree-like structure, just like its name. This type of mining belongs to supervised class learning.<br><br>
+					In supervised learning, the target result is already known. Decision trees can be used for both categorical and numerical data. The categorical data represent gender, marital status, etc. while the numerical data represent age, temperature, etc.<br><br>
+                    <ul>
+                        <h5>Basic Terminology of Decision Trees</h5>
+                        <li>Root Node: It represents the entire dataset or training sample which further gets divided into two or more homogeneous sets.</li>
+                        <li>Splitting: It is a process of dividing a node into two or more sub-nodes based on different values of feature of dataset.</li>
+                        <li>Decision Node: When a sub-node splits into further sub-nodes, then it is called the decision node.</li>
+                        <li>Leaf / Terminal Node: Nodes that are purely homogeneous and do not split further is called Leaf or Terminal node.</li>
+                        <li>Pruning: Removal sub-nodes of a decision node is called pruning. You can say the opposite process of splitting. It is done to avoid overfitting.</li>
+                        <li>Branch / Sub-Tree: A subsection or subset of the entire tree is called branch or sub-tree.</li>
+                        <li>Parent and Child Node: A node, which is divided into sub-nodes is called a parent node whereas sub-nodes which emerged from parent node are the child node.</li>
+
+                    </ul>
+                    Given Below is the Decision Tree for Weather Dataset<br>
+
+					<div align="center" class="image-fluid">
+                        <img src="../../static/DecisionTree/decision_tree_tutorial.png">
+                        <h5><a href="https://www.openml.org/d/41544">Click here for Weather Dataset</a></h5>
+                    </div>
+        		</p><br><br>
+
+        		<h4>Decision trees used in data mining are of two main types:</h4><br>
+        		<p>
+					<strong>Classification tree analysis</strong> is when the predicted outcome is the class (discrete) to which the data belongs.<br><br>
+					<strong>Regression tree analysis</strong> is when the predicted outcome can be considered a real number (e.g. the price of a house, or a patient's length of stay in a hospital).
+        		</p><br><br>
+
+        		<h4>How Does A Decision Tree Work?</h4><br>
+        		<p>
+        			A decision tree is a supervised learning algorithm that works for both discrete and continuous variables.
+                    <ul>
+                        <li>It splits the dataset into subsets on the basis of the most significant attribute in the dataset. It uses Information Gain, Gini Index, or Gain Ratio as metric to select best attribute</li><br>
+					   <li>The most significant predictor or first splitting node is designated as the root node, splitting is done to form sub-nodes called decision nodes, and the nodes which do not split further are terminal or leaf nodes.</li><br>
+					   <li>In the decision tree, the dataset is divided into homogeneous and non-overlapping regions. It follows a top-down approach as the top region presents all the observations at a single place which splits into two or more branches that further split. This approach is also called a greedy approach as it only considers the current node between the worked on without focusing on the future nodes.</li><br>
+					   <li>The decision tree algorithms will continue running until a stop criteria such as the minimum number of observations, max-depth etc. is reached.</li><br>
+					   <li>Once a decision tree is built, many nodes may represent outliers or noisy data. Tree pruning method is applied to remove unwanted data. This, in turn, improves the accuracy of the classification model.</li><br>
+					   <li>To find the accuracy of the model, a test set consisting of test tuples and class labels is used. The percentages of the test set tuples are correctly classified by the model to identify the accuracy of the model. If the model is found to be accurate then it is used to classify the data tuples for which the class labels are not known.</li><br><br>
+					Some of the decision tree algorithms include Hunt’s Algorithm, ID3, CD4.5, and CART.
+        		</p><br><br>
+
+        		<h4>How To Select Attributes For Creating A Tree?</h4><br>
+        		<p>
+        			Attribute selection measures are also called splitting rules to decide how the tuples are going to split. The splitting criteria are used to best partition the dataset. These measures provide a ranking to the attributes for partitioning the training tuples.<br><br>
+					<strong>The most popular methods of selecting the attribute are Information Gain, Gini Index.</strong><br><br>
+					<ul>
+						<li>
+							<h5>Information Gain</h5>
+							<p>
+								This method is the main method that is used to build decision trees. It reduces the required information and number of tests needed to classify the tuples. The attribute with the highest information gain is selected.<br><br>
+								The original information needed for classification of a tuple in dataset D is given by:<br><br>
+								<div align="center"><img src="../../static/DecisionTree/infogain1.png"> </div><br>
+
+								<p>Where p is the probability that the tuple belongs to class C. Log to the base 2 is used here becuase information is encoded in bits. E(s) represents the average amount of information required to find out the class label of dataset D. This information gain is also called <strong>Entropy</strong>.<br><br>
+								The information required for exact classification after portioning is given by the formula:</p>
+								<div align="center"><img src="../../static/DecisionTree/infogain2.png"> </div><br>
+
+								<p>Where P (c) is the weight of partition. This information represents the information needed to classify the dataset D on portioning by X.<br><br>
+								Information gain is the difference between the original and expected information that is required to classify the tuples of dataset D.</p><br>
+								<div align="center"><img src="../../static/DecisionTree/infogain3.png"> </div><br>
+								<p>Gain is the reduction of information that is required by knowing the value of X. The attribute with the highest information gain is chosen as “best”.</p><br>
+							</p>
+						</li>
+						<li>
+							<h5>Gain Ratio</h5>
+							<p>Information gain might sometimes result in portioning useless for classification. However, the Gain ratio splits the training data set into partitions and considers the number of tuples of the outcome with respect to the total tuples. The attribute with the max gain ratio is used as a splitting attribute.</p>
+							<div align="center"><img src="../../static/DecisionTree/gainratio1.png"> </div><br>
+						</li>
+						<li>
+							<h5>Gini Index</h5><br>
+							<p>
+								Gini Index is calculated for binary variables only. It measures the impurity in training tuples of dataset D, as<br>
+							<div align="center"><img src="../../static/DecisionTree/giniindex1.png"> </div><br>
+								<p>P is the probability that tuple belongs to class C. The Gini index that is calculated for binary split dataset D by attribute A is given by:</p>
+							<div align="center"><img src="../../static/DecisionTree/giniindex2.png"> </div><br>	
+								<p>Where n is the nth partition of the dataset D.<br><br>
+								The reduction in impurity is given by the difference of the Gini index of the original dataset D and Gini index after partition by attribute A.<br><br>
+								The maximum reduction in impurity or max Gini index is selected as the best attribute for splitting.</p><br>
+							</p>
+						</li>
+					</ul>
+        		</p>
+
+        		<h4>Overfitting In Decision Trees</h4><br><br>
+        		<p>
+        			Overfitting happens when a decision tree tries to be as perfect as possible by increasing the depth of tests and thereby reduces the error. This results in very complex trees and leads to overfitting.<br><br>
+					Overfitting reduces the predictive nature of the decision tree. The approaches to avoid overfitting of the trees include pre pruning and post pruning.<br><br>
+        		</p>
+        		<p>
+        			<h5>What is Tree Prunning?</h5><br><br>
+        			<p>
+        				Pruning is the method of removing the unused branches from the decision tree. Some branches of the decision tree might represent outliers or noisy data.<br><br>
+						Tree pruning is the method to reduce the unwanted branches of the tree. This will reduce the complexity of the tree and help in effective predictive analysis. It reduces the overfitting as it removes the unimportant branches from the trees.<br><br>
+        			</p>
+        		</p>
+        		<p>
+        			<h5>There are two ways of pruning the tree:</h5>
+        			<ul>
+        				<li>
+        					<p>
+        						<strong>Prepruning</strong>: In this approach, the construction of the decision tree is stopped early. It means it is decided not to further partition the branches. The last node constructed becomes the leaf node and this leaf node may hold the most frequent class among the tuples.<br>
+								The attribute selection measures are used to find out the weightage of the split. Threshold values are prescribed to decide which splits are regarded as useful. If the portioning of the node results in splitting by falling below threshold then the process is halted.<br>
+        					</p>
+        				</li>
+        				<li>
+        					<p>
+        						<strong>Postpruning</strong>: This method removes the outlier branches from a fully grown tree. The unwanted branches are removed and replaced by a leaf node denoting the most frequent class label. This technique requires more computation than prepruning, however, it is more reliable.<br>
+								The pruned trees are more precise and compact when compared to unpruned trees but they carry a disadvantage of replication and repetition.<br>
+								Repetition occurs when the same attribute is tested again and again along a branch of a tree. Replication occurs when the duplicate subtrees are present within the tree. These issues can be solved by multivariate splits.<br>
+        					</p>
+        				</li>
+        			</ul>
+        		</p>
+
+        	</div>
+        </div>
+
+      </div>
+      
+    </div>
+    <!---------------------------------------------Main content end--------------------------------------------->
+    
+    <!------------top Fab button start-------->
+    <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x" style="position: fixed;bottom:5%;right: 5%;">
+    </i></a>
+    <!-----top Fab button end ---------->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+   
+  </body>
+</html>

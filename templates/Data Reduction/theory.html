@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/density/main.css">
+
+</head>
+
+<body>
+
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between"
+        style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/"><img src="../../static/nittlogo.png"> National Institute of
+            Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../aboutus">About us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!------------------------------Main content Start---------------------------------------------------->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="bg-light col-lg-2 col-md-3 col-sm-3 show colapse" id="sidebar">
+                <div class="flex-column">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="aim.html">
+                                <i class="fas fa-book-open"></i> Aim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="theory.html">
+                                <i class="fas fa-book-open"></i>Theory</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="procedure.html">
+                                <i class="fas fa-book-open"></i>Procedure</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pretest.html">
+                                <i class="fas fa-book-open"></i>Pre-test</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="simulation.html">
+                                <i class="fas fa-flask"></i>Simulation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="posttest.html">
+                                <i class="fas fa-book-open"></i>Post-Test</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="references.html">
+                                <i class="fas fa-book-open"></i>Refernces</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-lg-10 col-md-9 col-sm-9">
+                <div class="px-4 mt-4" style="text-decoration: none;">
+                    <div class="row border rounded">
+                        <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse"
+                            data-target="#sidebar" aria-controls="sidebar" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <h4 class="col-10"><a href="../../" class="text-secondary">Data Mining</a> > <a href="#"
+                                class="text-secondary">Data Reduction</a> > Theory</h4></span>
+                    </div>
+                    <div class="display-5 content-section">
+                        <h2 id="top" class="display-4">Theory</h2><hr><br>
+                        <p>
+                        <h4>What is Data Reduction?</h4><br>
+                        <p>
+                            Data reduction is a process that reduced the volume of original data and represents it in a
+                            much
+                            smaller volume.Data reduction technique reduces the volume of data yet maintains the
+                            integrity
+                            of the data.<br>
+                            Data reduction does not affect the result obtained from data mining that means the result
+                            obtained from data mining before data reduction and after data reduction is the same (or
+                            almost
+                            the same).
+                        </p><br><br>
+                        <h4>Data Reduction Techniques used in data mining:</h4><br>
+                        <p>
+                            <strong>1. Dimensionality Reduction :</strong> Dimensionality reduction eliminates the
+                            attributes from the data set under consideration thereby reducing the volume of original
+                            data.<br>
+                            Let us understand this with a simple example. Consider the below image:<br><br>
+                        <div align="center"><img src="../../static/Data Reduction/ex1.png"></div>
+                        Here we have weights of similar objects in Kg (X1) and Pound (X2). If we use both of these
+                        variables, they will convey similar information. So, it would make sense to use only one
+                        variable.
+                        We can convert the data from 2D (X1 and X2) to 1D (Y1) as shown below:
+                        <div align="center"><img src="../../static/Data Reduction/ex2.png"></div>
+                        Similarly, we can reduce p dimensions of the data into a subset of k dimensions. This is called
+                        dimensionality reduction.<br>
+                        <strong>In this experiment we will be using Principal Component Analysis for dimensionality
+                            reduction.</strong><br><br>
+                        <strong>2. Numerosity Reduction : </strong>The numerosity reduction reduces the volume of the
+                        original data and represents it in a much smaller form. This technique includes two types
+                        parametric
+                        and non-parametric numerosity reduction.<br><br>
+                        <strong>3. Data Cube Aggregation : </strong>This technique is used to aggregate data in a
+                        simpler
+                        form. Consider you have the data of ectronics sales per quarter for the year 2016 to the year
+                        2020.
+                        In case you want to get the annual sale per year then you just have to aggregate the sales per
+                        quarter for each year. <br><br>
+                        <strong>4. Data Compression : </strong>Data compression is a technique where the data
+                        transformation
+                        technique is applied to the original data in order to obtain compressed data. If the compressed
+                        data
+                        can again be reconstructed to form the original data without losing any information then it is a
+                        ‘lossless’ data reduction.If you are unable to reconstruct the original data from the compressed
+                        one
+                        then your data reduction is ‘lossy’. <br><br>
+                        </p><br><br>
+                        <h4>How Does Principal Component Analysis(PCA) Work in Dimensionality Reduction?</h4><br>
+                        <p>
+                            PCA is a technique which helps us in extracting a new set of variables from an existing
+                            large
+                            set of variables. These newly extracted variables are called Principal Components.In simple
+                            words, PCA is a method of obtaining important variables (in form of components) from a large
+                            set
+                            of variables available in a data set.<br><br>
+                            It extracts low dimensional set of features by taking a projection of irrelevant dimensions
+                            from
+                            a high dimensional data set with a motive to capture as much information as
+                            possible.<br><br>
+                            With fewer variables obtained while minimising the loss of information, visualization also
+                            becomes much more meaningful. PCA is more useful when dealing with 3 or higher dimensional
+                            data.<br><br>
+                            It is always performed on a symmetric correlation or covariance matrix. This means the
+                            matrix
+                            should be numeric and have standardized data.<br><br>
+                        </p><br><br>
+                        <h4>Let’s understand it using an example:</h4><br>
+                        <p>
+                            Let’s say we have a data set of dimension 300 (n) × 50 (p). n represents the number of
+                            observations and p represents number of predictors. Since we have a large p = 50, there can
+                            be
+                            p(p-1)/2 scatter plots i.e more than 1000 plots possible to analyze the variable
+                            relationship.
+                            Wouldn’t is be a tedious job to perform exploratory analysis on this data ?<br><br>In this
+                            case,
+                            it would be a lucid approach to select a subset of p (p << 50) predictor which captures as
+                                much information. Followed by plotting the observation in the resultant low dimensional
+                                space.<br>The image below shows the transformation of a high dimensional data (3
+                                dimension)
+                                to low dimensional data (2 dimension) using PCA. Not to forget, each resultant dimension
+                                is
+                                a linear combination of p features.
+                        </p>
+                        <div align="center"><img src="../../static/Data Reduction/ex3.png"></div><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------Main content end--------------------------------------------->
+        <!------------top Fab button start-------->
+        <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x"
+                style="position: fixed;bottom:5%;right: 5%;">
+            </i></a>
+        <!-----top Fab button end ---------->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>

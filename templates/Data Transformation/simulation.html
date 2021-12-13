@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation - Data Transformation</title>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/DecisionTree/main.css">
+
+    <link rel="stylesheet" href="Data_Binning.css">
+    
+    <script src="Data_Binning.js"></script>
+   
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/" target="_blank"><img src="../../static/nittlogo.png"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../aboutus.html">About us</a>
+                </li>
+            </ul>
+        </div></div>
+    </nav>
+
+    <div class="p-4">
+        <p align="center" class="display-4">Data Binning Algorithm Simulation</p><hr class="px-5 mx-5">
+    <button onclick="myFunction_table()" class="btn btn-primary">Check Out Initial Table</button>
+    <br>
+
+    <table id="myDIV" class="center" style="display: none;">
+        <tr>
+            <th>City</th>
+            <th>State</th>
+            <th>Number of COVID Patients</th>
+        </tr>
+        <tr>
+            <td>Mumbai</td>
+            <td>Maharashtra</td>
+            <td>7800</td>
+        </tr>
+        <tr>
+            <td>Bengaluru</td>
+            <td>Karnataka</td>
+            <td>2300</td>
+        </tr>
+        <tr>
+            <td>Kolkata</td>
+            <td>West Bengal</td>
+            <td>6300</td>
+        </tr>
+        <tr>
+            <td>Pune</td>
+            <td>Maharashtra</td>
+            <td>5500</td>
+        </tr>
+        <tr>
+            <td>Hyderabad</td>
+            <td>Telangana</td>
+            <td>4800</td>
+        </tr>
+        <tr>
+            <td>Indore</td>
+            <td>Madhya Pradesh</td>
+            <td>8400</td>
+        </tr>
+        <tr>
+            <td>Surat</td>
+            <td>Gujarat</td>
+            <td>3400</td>
+        </tr>
+        <tr>
+            <td>Jaipur</td>
+            <td>Rajasthan</td>
+            <td>6100</td>
+        </tr>
+        <tr>
+            <td>Lucknow</td>
+            <td>Uttar Pradesh</td>
+            <td>7300</td>
+        </tr>
+        <tr>
+            <td>Ahemedabad</td>
+            <td>Gujarat</td>
+            <td>2200</td>
+        </tr>
+        <tr>
+            <td>Bhopal</td>
+            <td>Madhya Pradesh</td>
+            <td>7100</td>
+        </tr>
+        <tr>
+            <td>Chennai</td>
+            <td>Tamil Nadu</td>
+            <td>8300</td>
+        </tr>
+        
+    </table>
+
+    <br>
+    
+   
+    <button onclick="myFunction()" class="btn btn-primary" >Check Histogram</button>
+      <div id="histogram" style="display: none;">
+        <br><br>
+            <center> <u><h3>Histogram</h3></u></center>
+            <center> <img src="Histogram12.png" style="Height:450px" id="image" alt="Histogram" /></center>
+      </div>
+    <br>
+    <br>
+
+
+    <button  onclick="myFunction_table2()" class="btn btn-primary">Check Out Data Binning Table</button>
+    <br>
+
+    <table id="myDIV2" class="center" style="display: none;">
+        <tr>
+            <th>City</th>
+            <th>State</th>
+            <th>Number of COVID Patients</th>
+            <th>Zone</th>
+        </tr>
+        <tr>
+            <td>Mumbai</td>
+            <td>Maharashtra</td>
+            <td>7800</td>
+            <td style="background-color:#FF0000">Red</td>
+        </tr>
+        <tr>
+            <td>Bengaluru</td>
+            <td>Karnataka</td>
+            <td>2300</td>
+            <td style="background-color:#32CD32">Green</td>
+        </tr>
+        <tr>
+            <td>Kolkata</td>
+            <td>West Bengal</td>
+            <td>6300</td>
+            <td style="background-color:#FF8C00">Orange</td>
+        </tr>
+        <tr>
+            <td>Pune</td>
+            <td>Maharashtra</td>
+            <td>5500</td>
+            <td style="background-color:#FF8C00">Orange</td>
+        </tr>
+        <tr>
+            <td>Hyderabad</td>
+            <td>Telangana</td>
+            <td>4800</td>
+            <td style="background-color:#32CD32">Green</td>
+        </tr>
+        <tr>
+            <td>Indore</td>
+            <td>Madhya Pradesh</td>
+            <td>8400</td>
+            <td style="background-color:#FF0000">Red</td>
+        </tr>
+        <tr>
+            <td>Surat</td>
+            <td>Gujarat</td>
+            <td>3400</td>
+            <td style="background-color:#32CD32">Green</td>
+        </tr>
+        <tr>
+            <td>Jaipur</td>
+            <td>Rajasthan</td>
+            <td>6100</td>
+            <td style="background-color:#FF8C00">Orange</td>
+        </tr>
+        <tr>
+            <td>Lucknow</td>
+            <td>Uttar Pradesh</td>
+            <td>7300</td>
+            <td style="background-color:#FF0000">Red</td>
+        </tr>
+        <tr>
+            <td>Ahemedabad</td>
+            <td>Gujarat</td>
+            <td>2200</td>
+            <td style="background-color:#32CD32">Green</td>
+        </tr>
+        <tr>
+            <td>Bhopal</td>
+            <td>Madhya Pradesh</td>
+            <td>7100</td>
+            <td style="background-color:#FF0000">Red</td>
+        </tr>
+        <tr>
+            <td>Chennai</td>
+            <td>Tamil Nadu</td>
+            <td>8300</td>
+            <td style="background-color:#FF0000">Red</td>
+        </tr>
+    </table>
+    <br>
+    <button id="bining-methods-btn" class="btn btn-primary" onclick="myFunction_binning_methods()">Check out Binnning Methods</button>
+    <div  id="binning-methods-content" class="border p-3" style="display:none;">
+        <h3 align="center"><u>Binning Methods For Data Smoothing</u></h3><br>
+        <p>
+            <strong>Sorted data for number of COVID Patients :</strong> 2200 , 2300 , 3400 , 4800 , 5500 , 6100 , 6300 , 7100 , 7300 , 7800 , 8300 , 8400
+        </p>
+        <h5>Patition into bins of depth 4 :</h5>
+        <p class="ml-3">
+            <strong>- Bin 1 :</strong> 2200 , 2300 , 3400 , 4800 <br>
+            <strong>- Bin 2 :</strong> 5500 , 6100 , 6300 , 7100 <br>
+            <strong>- Bin 3 :</strong> 7300 , 7800 , 8300 , 8400 <br>
+        </p>
+        <h5>Smoothing by bin Means :</h5>
+        <p class="ml-3">
+            <strong>- Bin 1 :</strong> 3175 , 3175 , 3175 , 3175 <br>
+            <strong>- Bin 2 :</strong> 6250 , 6250 , 6250 , 6250 <br>
+            <strong>- Bin 3 :</strong> 7950 , 7950 , 7950 , 7950 <br>
+        </p>
+        <h5>Smoothing by bin Median :</h5>
+        <p class="ml-3">
+            <strong>- Bin 1 :</strong> 2850 , 2850 , 2850 , 2850 <br>
+            <strong>- Bin 2 :</strong> 6200 , 6200 , 6200 , 6200 <br>
+            <strong>- Bin 3 :</strong> 8050 , 8050 , 8050 , 8050 <br>
+        </p>
+        <h5>Smoothing by bin Boundaries :</h5>
+        <p class="ml-3">
+            <strong>- Bin 1 :</strong> 2200 , 2200 , 2200 , 4800 <br>
+            <strong>- Bin 2 :</strong> 5500 , 5500 , 5500 , 7100 <br>
+            <strong>- Bin 3 :</strong> 7300 , 7300 , 7300 , 8400 <br>
+        </p>
+    </div>
+    
+    </div>
+
+    <!-- Fab Button start-->
+    <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x" style="position: fixed;bottom:5%;right: 5%;">
+    </i></a>
+    <!-- Fab Button end-->
+
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/DecisionTree/main.css">
+
+  </head>
+  <body>
+    
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/" target="_blank"><img src="../../static/nittlogo.png"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../aboutus.html">About us</a>
+                </li>
+            </ul>
+        </div></div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!-------------------------------------------Main content Start--------------------------------------------->
+    <div class="container-fluid">
+      
+      <div class="row">
+        <div class="bg-light col-lg-2 col-md-3 col-sm-3 show collapse" id="sidebar">
+        <div class="flex-column">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="aim.html">
+                    <i class="fas fa-book-open"></i> Aim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="theory.html">
+                    <i class="fas fa-book-open"></i>Theory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="procedure.html">
+                    <i class="fas fa-book-open"></i>Procedure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pretest.html" onclick="buildquiz()">
+                    <i class="fas fa-book-open"></i>Pre-test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="simulation.html">
+                    <i class="fas fa-flask"></i>Simulation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="posttest.html">
+                    <i class="fas fa-book-open"></i>Post-Test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="references.html">
+                    <i class="fas fa-book-open"></i>References</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="col-lg-10 col-md-9 col-sm-9">
+            <div>
+                <div class="px-4 mt-4" style="text-decoration: none;">
+                <div class="row border rounded">
+                 <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                </button>
+                <h4 class="col-10"><a href="../../index.html" class="text-secondary">Data Mining</a> > <a href="aim.html" class="text-secondary">Decision Tree</a> > Simulation</h4></span>
+                </div>
+            </div>
+            <div class="content-section">
+                <div>
+                    <h2 class="display-4">Simulation</h2><hr><br><br>
+                    For <b>simple demo</b> of Decision Tree
+                    <a href="demo.html" target="_blank">Click here</a><br><br>
+                    <h3>Python Implementation</h3>
+                    <p>
+                        We already discussed about process of making Decision Tree in Theory. Now lets make Proper Decision Tree Classifier on Breast Cancer Dataset and Check its accuracy.
+                    </p><br>
+                    <h4>Lets start!!!!!</h4><br>
+                    <p>
+                        For Experiment Purpose, we have taken <a href="https://www.openml.org/d/1510" target="_blank">Breast Cancer Dataset</a>. We will be using C4.5 algorithm for experiment, Python as the programming language and <a href="https://scikit-learn.org/stable/" target="_blank">scikit library</a> of python. You must have a look at the dataset before proceeding ahead.<br><br>
+                            For practice you can download the <a href="https://sourceforge.net/projects/weka/" target="_blank">Weka-Machine Learning Tool</a>.It is an devloped in Java and more importantly it is an Open Source Software.
+                    </p><br>
+                    <ul>
+                        <li>
+                            </p>
+                                <h4>Details about Dataset:</h4><br>
+                                    <b>Attribute types</b>: Numeric<br>
+                                    <b>Target Attribute Type</b>: Nominal<br>
+                                    <b>No. of Instances</b>: 569<br>
+                                    <b>No. of Features(attributes)</b>: 30<br>
+                                    <b>No. of classes</b>: 2 <br>
+                            </p>
+                        </li><br>
+                        <li>
+                            <p>
+                                <h4>Importing the necessary modules</h4>
+                                <code>
+                                    from matplotlib import pyplot as plt<br>
+                                    from sklearn import datasets<br>
+                                    from sklearn.datasets import load_breast_cancer<br>
+                                    from sklearn.model_selection import train_test_split<br>
+                                    from sklearn.tree import DecisionTreeClassifier<br>
+                                    from sklearn import tree
+                                </code>
+                                <p class="tab">
+                                    - Sklearn for dataset, classifier and other necessary methods.<br>
+                                    - matplotlib for visulising the Decision Tree.<br>
+                                    
+                                </p>
+                            </p>
+                        </li><br>
+                        <li>
+                            <p>
+                                <h4>Loading the Dataset</h4>
+                                
+                                <code>
+                                    breast_cancer = load_breast_cancer()<br>
+                                    x=breast_cancer.data<br>
+                                    y=breast_cancer.target<br>
+                                </code>
+                                <p class="tab">
+                                    - Load_breast_Cancer is a method defined in Scikit Learn Library.<br>
+                                    - It returns dataset in Dictionary Format where data and target are keys in dictionary.<br>
+                                </p>    
+                            </p>
+                        </li><br>
+                        <li>
+                            <p>
+                                <h4>Splitting the dataset</h4>
+                                <code>
+                                    x_train, x_test, y_train, y_test=train_test_split(x,y,train_size=0.7)
+                                </code>
+                                <p class="tab">
+                                    - train_test_split splits 70% of the dataset as training data and rest 30% as test data.<br>
+                                    <p class="mx-5">
+                                        x_train -> contains 70% samples<br>
+                                        y_train -> contains 70% Class labels<br>
+                                        x_test -> contains 30% samples<br>
+                                        y_test -> contains 30% class labels<br>
+                                    </p>   
+                                </p>
+                            </p>
+                        </li><br>
+                        <li>
+                            <p>
+                                <h4>Splitting Criteria</h4><br>
+                                For experiment, We will work with <b>Information Gain.</b><br><br>
+                                <div class="bg-light p-3">
+                                    <b>Note:</b> If features are Numeric, then Decision Tree classifier will convert them into categorical data by dividing the range into small ranges. 
+                                    For eg. Feature of Range [1, 500] can be divided by putting a condition like feature <= 250 into 2 small ranges [1, 250] and [251, 500]<br><br>
+
+                                    Decision Tree Classifier will choose each distinct value of Feature F1 and calculate Information Gain after splitting the dataset on that value to identify the optimal splitting condition value.<br><br>
+
+                                    If you have any doubt <a href="https://www.youtube.com/watch?v=5O8HvA9pMew" target="_blank">watch this</a>, <span class="text-secondary">I have no right to this video, this video is included for understanding purpose only.</span>
+                                </div>
+
+                                <div class="display-5">
+                                    <p>
+                                        <br><b>For 1st split:</b><br>
+                                        
+                                        Since Features are <b>numeric</b>, Decision Tree Classifier will convert numeric attributes to binary by testing all distinct values of feature and finding the optimal condition to split.<br><br>
+
+                                        So, for all 30 Attributes it will find optimal value, and then compare Information Gain of each attribute and then choose the Feature with maximum Information Gain.<br><br>
+
+                                        Procedure for calculating Information Gain is given below.<br><br>
+                                        Here, we will be calculating Information Gain for Feature (Worst Perimeter):
+                                        <div class=" container-fluid">
+                                        <table class="border table">
+                                            <tr><th colspan="2">Details of Node (Worst Perimeter)</th></tr>
+                                        <tr><td>Total instances</td> <td>400</td></tr>
+                                        <tr><td>Range</td><td> [50.41, 251.2]</td></tr>
+                                        <tr><td>Best Split value</td><td> 105.15 (See note above for this)</td></tr>
+                                        <tr><td>Instances of Malignant Class</td><td>173</td></tr>
+                                        <tr><td>Instances of Benign Class</td><td>227</td></tr>
+                                        </table>
+                                        <table class="border table">
+                                            <tr><th colspan="2">Details of Node (Worst Perimeter -> Left)</th></tr>
+                                        <tr><td>Total instances</td> <td>175</td></tr>
+                                        <tr><td>Range</td><td> [50.41, 105.15]</td></tr>
+                                        <tr><td>Instances of Malignant Class</td><td>159</td></tr>
+                                        <tr><td>Instances of Benign Class</td><td>16</td></tr>
+                                        </table>
+                                        <table class="border table">
+                                            <tr><th colspan="2">Details of Node (Worst Perimeter -> Right)</th></tr>
+                                        <tr><td>Total instances</td> <td>225</td></tr>
+                                        <tr><td>Range</td><td> [105.16, 251.2]</td></tr>
+                                        
+                                        <tr><td>Instances of Malignant Class</td><td>14</td></tr>
+                                        <tr><td>Instances of Benign Class</td><td>211</td></tr>
+                                        </table>
+                                        </div>
+                                        <br><br>Now, calculate <b>Entropy</b> of all nodes
+                                    </p>
+                                    <div align="center"><img src="../../static/DecisionTree/infogain1.png"> </div><br>
+                                    <div class="ml-5">
+                                    <b>I<sub>H</sub>(Worst_perimeter)</b><div class="ml-5">= − { (173/400) log<sub>2</sub>(173/400) + (227/400) log<sub>2</sub>(227/400) }<br> = <b>0.98681</b></div><br><br>
+                                    <b>I<sub>H</sub>(Worst_perimeter<sub>left</sub>)</b><div class="ml-5"> = −{(14/225) log<sub>2</sub>(14/225)+ (211/225) log<sub>2</sub>(211/225) }<br> = <b>0.3362</b></div><br><br>
+                                    <b>I<sub>H</sub>(Worst_perimeter<sub>right</sub>)</b><div class="ml-5"> = −{ (159/175) log<sub>2</sub>(159/175) + (16/175) log<sub>2</sub>(16/175) }<br> = <b>0.44122</b></div><br><br>
+                                    <p>Now, calculate <b>Information Gain</b></p>
+                                    <div align="center"><img src="../../static/DecisionTree/infogain3.png"> </div><br>
+                                    <b>IG<sub>H</sub>(Worst_perimeter)</b><div class="ml-5"> = (0.98681) − (173/400)×(0.3362) − (227/400)×(0.44122)<br> = 0.685</div><br><br>
+                                    </div>
+                                </div>
+
+                                <b>Similarly, You can calculate Information Gain for other Features, Here are the calculated Information Gains of all the significant Attributes of Breast Cancer Dataset (Ranked according to decreasing Information Gain)</b>.<br><br>
+                                <table class="table border">
+                                    <tr><th>Feature</th><th>Info Gain</th></tr>
+                                    <tr><td>Worst Perimeter</td><td>0.685</td></tr>
+                                    <tr><td>Worst Area</td><td>0.6686</td></tr>
+                                    <tr><td>Worst Radius</td><td>0.6665</td></tr>
+                                    <tr><td>Worst Concave Points</td><td>0.6478</td></tr>
+                                    <tr><td>Mean Concave Points</td><td>0.6347</td></tr>
+                                    <tr><td>Mean Perimeter</td><td>0.5623</td></tr>
+                                    <tr><td>Mean Area</td><td>0.5479</td></tr>
+                                    <tr><td>Mean Radius</td><td>0.541</td></tr>
+                                    <tr><td>Mean Concavity</td><td>0.5171</td></tr>
+                                    <tr><td>Area Error</td><td>0.517</td></tr>
+                                    <tr><td>Worst Concavity</td><td>0.4735</td></tr>
+                                    <tr><td>Radius Error</td><td>0.3679</td></tr>
+                                    <tr><td>Perimeter Error</td><td>0.3663</td></tr>
+                                    <tr><td>Worst Compactness</td><td>0.3204</td></tr>
+                                    <tr><td>Mean Compactness</td><td>0.304</td></tr>
+                                    <tr><td>Concavity Error</td><td>0.2225</td></tr>
+                                    <tr><td>Concave points Error</td><td>0.197</td></tr>
+                                    <tr><td>Worst Texture</td><td>0.1881</td></tr>
+                                    <tr><td>Mean Texture</td><td>0.1593</td></tr>
+                                    <tr><td>Worst Symmetry</td><td>0.1492</td></tr>
+                                    <tr><td>Compactness Error</td><td>0.1303</td></tr>
+                                    <tr><td>Worst Smoothness</td><td>0.1235</td></tr>
+                                    <tr><td>Mean Symmetry</td><td>0.0988</td></tr>
+                                    <tr><td>Mean Smoothness</td><td>0.0971</td></tr>
+                                    <tr><td>Worst Fractal Dimension</td><td>0.0747</td></tr>
+                                    <tr><td>Fractal Dimension Error</td><td>0.0346</td></tr>
+                                    <tr><td>Symmetry Error</td><td>0.0228</td></tr>
+                                    <tr><td>Mean Fractal Dimension</td><td>0</td></tr>
+                                    <tr><td>Texture Error</td><td>0</td></tr>
+                                    <tr><td>Smoothness Error</td><td>0</td></tr>
+                                </table>
+                            </p>
+                        </li><br>
+                        <li>
+                            <p>
+                                <h4>Prepare the Model</h4>
+                                <code>clf_entropy = DecisionTreeClassifier(criterion="entropy",splitter="best",max_depth=3)<br>
+                                    model_entropy = clf_entropy.fit(x_train, y_train)
+                                </code>
+                                <p class="tab">
+                                    - DecisionTreeClassifier is a method to prepare the classifier object.
+                                    <p class="mx-5">
+                                        criterion -> It can have values {entropy, Gini}, entropy(For information Gain)<br> 
+                                        splitter -> It can have values {best, random}, best for choosing best splitting attribute<br>
+                                        max_depth-> It is used to control Over-fitting. So, tree will have atmost 3 levels<br>
+                                    </p>
+                                    - fit method will train the classifier and return a model.
+                                </p>
+                            </p>
+                        </li><br>
+                        <li>
+                            <p>
+                                <h4>Check accuracy of our model</h4>
+                                <code>
+                                    accuracy=clf_entropy.score(x_test,y_test)
+                                </code>
+                                <p class="tab">
+                                    - score will validate 'x_test' sample and then check the labels produced by it agains 'y_test' sample of labels.<br>
+                                    - Accuracy of our model is <b>0.9523809523809523</b>.<br>
+                                </p>
+                            </p>
+                        </li><br>
+                        <li>
+                            <p>
+                                <h4>Make predictions using above model</h4>
+                                <code>
+                                    pred=clf_entropy.predict(x_test,check_input=True)
+                                </code>
+                                <p class="tab">
+                                    - This method returns the array of Labels for 'x_test' sample.<br>
+                                    - <b>Predictions Array will look like this</b>
+                                    <p class="mx-5 bg-light">
+                                        [ 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 0 1 0 0 1 0 1 1 1 1 0 0 1 1 0 1 0 1 1 0 1 0 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 0 1 0 1 0 0 1 1 1 1 1 0 0 1 0 1 0 1 1 1 1 1 0 1 1 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 1 ]
+                                    </p>
+                                    - {0: Malignant, 1: Benign}
+                                </p>
+                            </p>
+                        </li><br>
+                        <li>
+                            <p>
+                                <h4>Visulaize our Model</h4>
+                                <code>
+                                    fig_entropy = plt.figure(figsize=(13,8),dpi=100)<br>
+                                    figtree_entropy= tree.plot_tree(clf_entropy,feature_names=breast_cancer.feature_names,class_names=breast_cancer.target_names,filled=True)
+                                </code>
+                                <p>
+                                    - plt.figure is a method of matplotlib and it creates a figure of (13,8) ratio of dimensions with density of 100 pixels per inch.<br>
+                                    - tree.plot_tree plots the Decision tree<br>
+                                    <p class="mx-5">
+                                        clf_entropy -> it is the classifier<br>
+                                        feature_names -> to name the splitting attribute<br>
+                                        class_names -> to label the classes<br>
+                                        filled -> to color the graph<br>
+                                    </p>
+                                </p>
+                            </p>
+                        </li><br>
+                        <li>
+                            <h4>At last, This is how our tree looks like (Here, tree for Both criteria(Entropy and Gini ) are shown)</h4><br>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <div>
+        <u><h5 align="center">Decision Tree (splitter=best, criterion="Entropy")</h5></u>
+        <img src="../../static/DecisionTree/decisiontree_entropy.png" class="image-fluid">
+        
+    </div>
+    <div>
+        
+        <img src="../../static/DecisionTree/decisiontree_gini.png" class="image-fluid">
+        <u><h5 align="center">Decision Tree (splitter="best",criterion="Gini")</h5></u>
+        <br><br>
+    </div>
+    
+        <!-- Fab Button start-->
+        <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x" style="position: fixed;bottom:5%;right: 5%;">
+        </i></a>
+        <!-- Fab Button end-->
+
+    <!--Main content end-->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+   
+  </body>
+</html>

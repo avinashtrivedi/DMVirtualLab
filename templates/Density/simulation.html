@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/density/main.css">
+
+</head>
+
+<body>
+
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/" target="_blank"><img src="../../static/nittlogo.png"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../aboutus.html">About us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!--Main content Start-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-3  show collapse bg-light" id="sidebar">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="aim.html">
+                            <i class="fas fa-book-open"></i> Aim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="theory.html">
+                            <i class="fas fa-book-open"></i>Theory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="procedure.html">
+                            <i class="fas fa-book-open"></i>Procedure</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pretest.html">
+                            <i class="fas fa-book-open"></i>Pre-test</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="simulation.html">
+                            <i class="fas fa-flask"></i>Simulation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="posttest.html">
+                            <i class="fas fa-book-open"></i>Post-Test</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="references.html">
+                            <i class="fas fa-book-open"></i>Refernces</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-10 col-md-9 col-sm-9">
+                <div>
+                    <div class="px-4 mt-4" style="text-decoration: none;">
+                        <div class="row border rounded">
+                            <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <h4 class="col-10"><a href="../../" class="text-secondary">Data Mining</a> > <a href="#" class="text-secondary">DBSCAN Algorithm</a> > Simulation</h4>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <div>
+                            <h2 class="display-4">Simulation</h2>
+                            <hr><br><br>
+                            <h4>For Demonstration
+                            <a href="../Density/demostration.html">click here</a></h4><br>
+
+                            <h4>Working Demostration Of Algorithm</h4>
+                            <div>
+                                <p>First, we find all the core points by calculating the number of samples within all the samples <strong>ε-</strong> neighbor. The remained samples are marked noise point as temporarily.
+                                    <br>If the distance between this sample and another sample is less than
+                                    <strong>ε</strong> , they are in the same neighbor.
+                                </p>
+                                <p>
+                                    Then, we choose an unvisited core point <strong>P</strong> randomly to merge the samples which are density-connectivity with it. Next, we visit the samples <strong>Q</strong> within
+                                    <strong>ε-</strong> neighbor of <strong>P</strong>. If <strong>Q</strong> is a core point, <strong>Q</strong> is in the same cluster of
+                                    <strong>P</strong> and do the same process on <strong>Q</strong> (like depth first search); else, visit the next sample. Specifically, the search process in <strong>P's ε-</strong> neighbor is shown below:
+                                </p>
+                            </div>
+                            <h5><strong>Steps</strong></h5>
+                            <li>Choose core point A and find all the samples in its <strong>ε-</strong> neighbor. The samples within
+                                <strong> A's ε-</strong> neighbor belong to the cluster of <strong>A</strong> . Then visit the samples within A's ε- neighbor successively.
+                            </li>
+
+                            <div>
+                                <img class="img-fluid" src="../../static/Density/img1.png">
+                                <!-- <img class="img-fluid" src="../../static/Density/img1.png"> -->
+                            </div>
+
+                            <li>Visit the sample <strong>B</strong> within <strong>A's ε-</strong> neighbor.
+                                <strong>B</strong> is a core sample, visit the samples within <strong>B's ε-</strong> neighbor
+                            </li>
+                            <div>
+                                <img class="img-fluid" src="../../static/Density/img2.png">
+                            </div>
+
+                            <li>Visit the sample <strong>C</strong> within <strong>B's ε-</strong> neighbor. <strong>C</strong> belongs to <strong>A</strong> and <strong>C</strong> is not a core point. Visit the other samples within <strong>B's ε-</strong>                                neighbor.</li>
+                            <div>
+                                <img class="img-fluid" src="../../static/Density/img3.png">
+                            </div>
+
+                            <li>Visit another sample <strong>D</strong> within <strong>B's ε-</strong> neighbor. <strong>D</strong> is a core point. Visit the samples within <strong>D's ε-</strong> neighbor</li>
+                            <div>
+                                <img class="img-fluid" src="../../static/Density/img4.png">
+                            </div>
+
+                            <li> Visit the sample <strong>E. E </strong> is not a core point. Now, there is not any point density-reachable to <strong>A</strong> . Stop clustering for <strong>A</strong> .</li>
+                            <div>
+                                <img class="img-fluid" src="../../static/Density/img5.png">
+                            </div>
+                            </ul>
+
+
+
+                            <!-- <h4>To understand the working demonstration</h4>><br>
+                            <h5><a href="../demoexperiment">Click here </a></h5> -->
+                            <!-- <h3>Enter Density-Based Clustering</h3>
+                            <ul style="list-style-type: disc;">
+                                <li> <strong>Premise: </strong> data is drawn from a probability density function (PDF).
+                                </li>
+                                <div align="left"><img src="../../static/density/clus.png"><img> </div>
+
+                                <li> Use the data to estimate the PDF.</li>
+                                <div align="left"><img src="../../static/density/cluster3.png"><img> </div>
+
+                                <li> Choose a threshold and get the upper level set.</li>
+                                <div align="left"><img src="../../static/density/cluster4.png"><img> </div>
+
+                                <li> Find connected components of the upper level set..</li>
+                                <div align="left"><img src="../../static/density/cluster5.png"><img> </div>
+
+                                <li> Intersect the data with the connected components.</li>
+                                <div align="left"><img src="../../static/density/cluster6.png"><img> </div>
+
+                                <li> Assign points to the corresponding cluster.</li>
+                                <div align="left"><img src="../../static/density/cluster7.png"><img> </div>
+                            </ul> -->
+                            
+                            <!-- <h5> <a href="../dbscansimulation">Click here</a></h5> -->
+                            <!--Main content end-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

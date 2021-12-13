@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/AprioriAlgorithm/main.css">
+
+  </head>
+  <body>
+    
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="#"><img src="../../static/nittlogo.png"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../aboutus.html">About Us</a>
+                </li>
+            </ul>
+        </div></div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!------------------------------Main content Start---------------------------------------------------->
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="bg-light col-lg-2 col-md-3 col-sm-3 show collapse" id="sidebar">
+        <div class="flex-column">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="aim.html">
+                    <i class="fas fa-book-open"></i>Aim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="theory.html">
+                    <i class="fas fa-book-open"></i>Theory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="procedure.html">
+                    <i class="fas fa-book-open"></i>Procedure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pretest.html" onclick="buildquiz()">
+                    <i class="fas fa-book-open"></i>Pre-Test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="simulation.html">
+                    <i class="fas fa-flask"></i>Simulation</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="posttest.html">
+                    <i class="fas fa-book-open"></i>Post-Test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="references.html">
+                    <i class="fas fa-book-open"></i>References</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+
+        <!--main-->
+       <div class="col-lg-10 col-md-9 col-sm-9">
+            <div class="px-4 mt-4" style="text-decoration: none;">
+                <div class="row border rounded">
+                 <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                </button>
+                <h4 class="col-10"><a href="../../index.html" class="text-secondary">Data Mining</a> > <a href="aim.html" class="text-secondary">Apriori Algorithm</a> > Theory</h4></span>
+                </div>
+             
+            <div class="container-fluid content-section">
+                <h2 id="top" class="display-4">Theory</h2>
+                <hr>
+                <br><br>
+                <h3>Association Mining</h3>
+                <p>Association Mining searches for frequent items in the data-set. In frequent mining usually the interesting associations and correlations between item sets in transactional and relational databases are found. In short, Frequent Mining shows which items appear together in a transaction or relation.</p>
+                <h4>Need of Association Mining</h4>
+                <p>Frequent mining is generation of association rules from a Transactional Dataset. If there are 2 items X and Y purchased frequently then its good to put them together in stores or provide some discount offer on one item on purchase of other item. This can really increase the sales. For example it is likely to find that if a customer buys Milk and bread he/she also buys Butter.</p>
+                <p>So the association rule is [‘milk]^[‘bread’]=>[‘butter’]. So seller can suggest the customer to buy butter if he/she buys Milk and Bread.</p>
+                <h3>The Apriori Algorithm</h3>
+                <p>Apriori is an algorithm for frequent item set mining and association rule learning over relational databases. It proceeds by identifying the frequent individual items in the database and extending them to larger and larger item sets as long as those item sets appear sufficiently often in the database. The frequent item sets determined by Apriori can be used to determine association rules which highlight general trends in the database. This has applications in domains such as market basket analysis.</p>
+                <p>The Apriori algorithm uses frequent itemsets to generate association rules, and it is designed to work on the databases that contain transactions. With the help of these association rule, it determines how strongly or how weakly two objects are connected. This algorithm uses a breadth-first search and Hash Tree to calculate the itemset associations efficiently. It is the iterative process for finding the frequent itemsets from the large dataset.</p>
+                <p>This algorithm was given by the R. Agrawal and Srikant in the year 1994. It is mainly used for market basket analysis and helps to find those products that can be bought together. It can also be used in the healthcare field to find drug reactions for patients.</p>
+                <p>Apriori algorithm is used for finding frequent itemsets in a dataset for boolean association rule. Name of the algorithm is Apriori because it uses prior knowledge of frequent itemset properties. We apply an iterative approach or level-wise search where k-frequent itemsets are used to find k+1 itemsets.</p>
+                <p>To improve the efficiency of level-wise generation of frequent itemsets, an important property is used called Apriori property which helps by reducing the search space.</p>
+                <h4>Apriori Property</h4>
+                <p>All non-empty subset of frequent itemset must be frequent. The key concept of Apriori algorithm is its anti-monotonicity of support measure. Apriori assumes that -:<br>
+                <i>All subsets of a frequent itemset must be frequent(Apriori propertry).
+                If an itemset is infrequent, all its supersets will be infrequent.</i></p>
+                <h3>Limitations of Apriori Algorithm</h3>
+                <p>
+                  Apriori Algorithm can be slow. The main limitation is time required to hold a vast number of candidate sets with much frequent itemsets, low minimum support or large itemsets i.e. it is not an efficient approach for large number of datasets. For example, if there are 10^4 from frequent 1- itemsets, it need to generate more than 10^7 candidates into 2-length which in turn they will be tested and accumulate. Furthermore, to detect frequent pattern in size 100 i.e. v1, v2… v100, it have to generate 2^100 candidate itemsets that yield on costly and wasting of time of candidate generation. So, it will check for many sets from candidate itemsets, also it will scan database many times repeatedly for finding candidate itemsets. Apriori will be very slow and inefficient when memory capacity is limited with large number of transactions. 
+                </p>
+            </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!---------------------------------------------Main content end--------------------------------------------->
+    
+    <!------------top Fab button start-------->
+    <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x" style="position: fixed;bottom:5%;right: 5%;">
+    </i></a>
+    <!-----top Fab button end ---------->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+   
+  </body>
+</html>

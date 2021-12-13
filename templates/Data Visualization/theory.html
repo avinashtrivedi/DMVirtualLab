@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/Data Visualization/main.css">
+
+  </head>
+  <body>
+    
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/" target="_blank"><img src="../../static/nittlogo.png"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../aboutus.html">About us</a>
+                </li>
+            </ul>
+        </div></div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!-------------------------------------------Main content Start--------------------------------------------->
+    <div class="container-fluid">
+      
+      <div class="row">
+        <div class="bg-light col-lg-2 col-md-3 col-sm-3 show collapse" id="sidebar">
+        <div class="flex-column">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="aim.html">
+                    <i class="fas fa-book-open"></i> Aim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="theory.html">
+                    <i class="fas fa-book-open"></i>Theory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="procedure.html">
+                    <i class="fas fa-book-open"></i>Procedure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pretest.html" onclick="buildquiz()">
+                    <i class="fas fa-book-open"></i>Pre-test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="simulation.html">
+                    <i class="fas fa-flask"></i>Simulation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="posttest.html">
+                    <i class="fas fa-book-open"></i>Post-Test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="references.html">
+                    <i class="fas fa-book-open"></i>Refernces</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="col-lg-10 col-md-9 col-sm-9">
+            <div class="px-4 mt-4" style="text-decoration: none;">
+                <div class="row border rounded">
+                 <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                </button>
+                <h4 class="col-10"><a href="../../index.html" class="text-secondary">Data Mining</a> > <a href="aim.html" class="text-secondary">Data Visualization</a> > Theory</h4></span>
+                </div>
+        	<div class="display-5 content-section">	
+        		<h2 id="top" class="display-4">Theory</h2>
+                <hr>
+                <br><br>
+
+        		<h3>Introduction </h3>
+                <p>Data visualization is actually a set of data points and information that are represented graphically to make it easy and quick for user to understand.
+                    Data visualization is good if it has a clear meaning, purpose, and is very easy to interpret, without requiring context. Tools of data visualization
+                    provide an accessible way to see and understand trends, outliers, and patterns in data by using visual effects or elements such as a chart, graphs, and maps.
+
+                </p><br>
+                <h5>Characteristics of Effective Graphical Visual :</h5>
+                <ul>
+                    <li>It shows or visualizes data very clearly in an understandable manner.<br></li>
+                    <li>It encourages viewers to compare different pieces of data.<br></li>
+                    <li>It closely integrates statistical and verbal descriptions of data set.<br></li>
+                    <li>It grabs our interest, focuses our mind, and keeps our eyes on message 
+                        as human brain tends to focus on visual data more than written data.<br></li>
+                    <li>It also helps in identifying area that needs more attention and improvement.<br></li>
+                    <li>Using graphical representation, a story can be told more efficiently. Also, 
+                        it requires less time to understand picture than it takes to understand textual data.<br></li>
+                </ul><br>
+   <h5>Categories of Data Visualization :</h5>
+
+    <p>Data visualization is very critical to market research where both numerical and categorical data can be visualized that helps in 
+       an increase in impacts of insights and also helps in reducing risk of analysis paralysis.So,
+       data visualization is categorized into following categories.</p>
+       <div align="center"><img src="../../static/Data Visualization/categories of data visulization.png"></div>
+    </p>
+    <h5>1. Numerical Data:</h5>
+
+       <p>Numerical data is also known as Quantitative data. Numerical data is any data where data generally represents amount such as height, weight, age of a person, etc. 
+       Numerical data visualization is easiest way to visualize data. It is generally used for helping others to digest large data sets and raw numbers in a way that makes
+       it easier to interpret into action. Numerical data is categorized into two categories :</p>
+       <ul>
+          <li>
+             <h5>Continuous Data –</h5>
+
+              <p>It can be narrowed or categorized (Example: Height measurements).</p>
+          </li>
+          <li>
+             <h5>Discrete Data –</h5>
+              <p>This type of data is not “continuous” (Example: Number of cars or children’s a household has).</p>
+          </li>
+      </ul>
+      <p>The type of visualization techniques that are used to represent numerical data visualization is Charts and Numerical Values. Examples are Pie Charts, Bar Charts, Averages, Scorecards, etc.</p><br>
+    
+      <h5>2. Categorical Data :</h5>
+       <p>Categorical data is also known as Qualitative data. Categorical data is any data where data generally represents groups. It simply consists of categorical variables 
+        that are used to represent characteristics such as a person’s ranking, a person’s gender, etc. Categorical data visualization is all about depicting key themes,
+         establishing connections, and lending context. Categorical data is classified into three categories :</p>
+       <ul>
+            <li>
+               <h5>Binary Data –</h5>
+                 <p>In this, classification is based on positioning (Example: Agrees or Disagrees).</p>
+            </li>
+            <li>
+               <h5>Nominal Data –</h5>
+                  <p>In this, classification is based on attributes (Example: Male or Female).</p>
+            </li>
+            <li>     
+               <h5>Ordinal Data –</h5>
+                  <p>In this, classification is based on ordering of information (Example: Timeline or processes).</p>
+            </li>
+       </ul> 
+       <p>The type of visualization techniques that are used to represent categorical data is Graphics, Diagrams, and Flowcharts. Examples are Word clouds, Sentiment Mapping, Venn Diagram, etc.</p>   
+
+         </div>
+        </div>
+
+      </div>
+      
+    </div>
+    <!---------------------------------------------Main content end--------------------------------------------->
+    
+    <!------------top Fab button start-------->
+    <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x" style="position: fixed;bottom:5%;right: 5%;">
+    </i></a>
+    <!-----top Fab button end ---------->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+   
+  </body>
+</html>

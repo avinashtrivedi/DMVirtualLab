@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23822e3469.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+
+    <title>Data Mining Lab</title>
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../static/kmeansalgo/main.css">
+    
+  </head>
+  <body>
+    
+    <!--navigation bar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" style="background-color: rgba(0,0,0,0.8);">
+        <a class="navbar-brand" href="https://www.nitt.edu/"><img src="../../static/nittlogo.png"> National Institute of Technology Tiruchirappalli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../aboutus.html">About us</a>
+                </li>
+            </ul>
+        </div></div>
+    </nav>
+    <!--navigation bar end-->
+
+    <!------------------------------Main content Start---------------------------------------------------->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="bg-light col-lg-2 col-md-3 col-sm-3 show colapse" id="sidebar">
+        <div class="flex-column">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="aim.html">
+                    <i class="fas fa-book-open"></i> Aim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="theory.html">
+                    <i class="fas fa-book-open"></i>Theory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="procedure.html">
+                    <i class="fas fa-book-open"></i>Procedure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pretest.html">
+                    <i class="fas fa-book-open"></i>Pre-test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="simulation.html">
+                    <i class="fas fa-flask"></i>Simulation</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="posttest.html">
+                    <i class="fas fa-book-open"></i>Post-Test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="references.html">
+                    <i class="fas fa-book-open"></i>Refernces</a>
+                </li>
+            </ul>
+        </div>
+
+        </div>
+        <div class="col-lg-10 col-md-9 col-sm-9">
+            <div class="px-4 mt-4" style="text-decoration: none;">
+                <div class="row border rounded">
+                 <button class="navbar-toggler col-2 border" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                </button>
+                <h4 class="col-10"><a href="../../" class="text-secondary">Data Mining</a> > <a href="aim.html" class="text-secondary">K-means Algorithm</a> > Theory</h4></span>
+                </div>
+        	<div class="display-5 content-section">	
+        		<h3 id="top" class="display-4">Demonstration of working of K-Means Algorithm</h3>
+                <hr>
+                <br><br>
+                <h4>The working of the K-Means algorithm is explained in the below steps:</h4><br>
+        		<ol>
+                    <br>
+        			<li>
+                        Select the number K to decide the number of clusters.
+        			</li>
+                    <br>
+        			<li>
+        				Select random K points or centroids. (It can be other from the input dataset).
+        			</li>
+                    <br>
+        			<li>
+        				Now Assign each data point to their closest centroid, which will form the predefined K clusters.
+        			</li>
+                    <br>
+                    <li>
+                        Calculate the variance and place a new centroid of each cluster.
+                    </li>
+                    <br>
+                    <li>
+                        Repeat the third steps, which means reassign each datapoint to the new closest centroid of each cluster.
+                    </li>
+                    <br>
+                    <li>
+                        If any reassignment occurs, then go to step-4 else go to FINISH.
+                    </li>
+                    <br>
+                    <li>
+                        The model is ready.
+                    </li>
+                    <br>
+                    
+        		</ol>
+                <h6>Let's understand the above steps by considering the visual plots:</h6>
+                    <li>
+                        Suppose we have two variables M1 and M2. The x-y axis scatter plot of these two variables is given below:
+                    </li>
+                    <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/ks1.png"> </div><br>
+
+                    <li>
+                        Let's take number k of clusters, i.e., K=2, to identify the dataset and to put them into different clusters. 
+                        It means here we will try to group these datasets into two different clusters.
+                    </li>
+                    <li>
+                        We need to choose some random k points or centroid to form the cluster. These points can be either the points from the dataset or any other point. So, here we are selecting the below two points as k points,
+                         which are not the part of our dataset. look at the below image:
+                    </li>
+                    <div align="center"><img  class="img-fluid" src="../../static/kmeansalgo/ks2.png"> </div><br>
+                    <li>
+                        Now we will assign each data point of the scatter plot to its closest K-point or centroid. We will compute it by applying some mathematics that we have studied to calculate the distance between two points. So, 
+                        we will draw a median between both the centroids. Consider the below image:
+                    </li>
+                    <div align="center"><img  class="img-fluid" src="../../static/kmeansalgo/ks3.png"> </div><br>
+                    <li>
+                        From the above image, it is clear that points left side of the line is near to the K1 or blue centroid, and points to the right of the line are close to the yellow centroid. 
+                        Let's color them as orange and green for clear visualization.
+                    </li>
+                    <div align="center"><img  class="img-fluid" src="../../static/kmeansalgo/ks4.png"> </div><br>
+                    <li>
+                        As we need to find the closest cluster, so we will repeat the process by choosing a new centroid. To choose the new centroids, we will compute the center of gravity of these centroids, 
+                        and will find new centroids as below:
+                    </li>
+                    <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/ks5.png"> </div><br>
+                    <li>
+                        Next, we will reassign each datapoint to the new centroid. For this, we will repeat the same process of finding a median line. 
+                        The median will be like below image:
+                    </li>
+                    <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/ks6.png"> </div><br>
+                    <li>
+                        From the above image, we can see, one green point is on the left side of the line, and two orange points are right to the line. So, 
+                        these three points will be assigned to new centroids.
+                    </li>
+                    <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/ks7.png"> </div><br>
+                    <h6>As reassignment has taken place, so we will again go to the step-4, 
+                        which is finding new centroids or K-points.</h6>
+                        <br>
+                    <li>
+                        We will repeat the process by finding the center of gravity of centroids, 
+                        so the new centroids will be as shown in the below image:
+                    </li>
+                    <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/ks8.png"> </div><br>
+                    <li>
+                        As we got the new centroids so again will draw the median line and reassign the data points. 
+                        So, the image will be:
+                    </li>
+                    <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/ks9.png"> </div><br>
+                    <li>
+                        We can see in the above image; there are no dissimilar data points on either side of the line, 
+                        which means our model is formed. Consider the below image:
+                    </li>
+                    <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/ks10.png"> </div><br>
+                    <li>
+                        As our model is ready, so we can now remove the assumed centroids, and the two final clusters will be as shown in the below image:
+                    </li>
+                    <div align="center"><img class="img-fluid" src="../../static/kmeansalgo/ks11.png"> </div><br>
+
+                    <h5 class="border p-3" align="center"><b>Next </b>: <a href="pythonimp.html">Python Implementation of K-means Algorithm</a></h5>
+
+                </div>
+        </div>
+
+      </div>
+      
+    </div>
+    <!---------------------------------------------Main content end--------------------------------------------->
+    
+    <!------------top Fab button start-------->
+    <a href="#" style="color: black;"><i class="fa fa-arrow-circle-up fa-3x" style="position: fixed;bottom:5%;right: 5%;">
+    </i></a>
+    <!-----top Fab button end ---------->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+   
+  </body>
+</html>
